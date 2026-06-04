@@ -3,352 +3,551 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VM 2026 – Kampprogram 20–27 juni</title>
+<title>VM 2026 – Kampprogram</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0e1a;
-    --surface: #111626;
-    --surface2: #181e30;
-    --border: rgba(255,255,255,0.08);
-    --border2: rgba(255,255,255,0.14);
-    --text: #f0f2f8;
-    --text2: #8a90a8;
-    --text3: #555d78;
-    --accent: #e8c84a;
-    --accent2: #c8a820;
-    --norway: #ef3340;
-    --norway-bg: rgba(239,51,64,0.12);
-    --norway-border: rgba(239,51,64,0.4);
-    --blue: #378ADD;
-    --blue-bg: rgba(55,138,221,0.12);
-    --green: #1D9E75;
-    --green-bg: rgba(29,158,117,0.1);
-    --radius: 10px;
-    --radius-lg: 14px;
-  }
+:root {
+  --teal:    #2BBFB3;
+  --teal-dk: #1A8A81;
+  --teal-lt: #D6F3F0;
+  --green:   #1E6B3C;
+  --green-lt:#E4F2EB;
+  --coral:   #E84B3A;
+  --coral-lt:#FCEAE8;
+  --yellow:  #F2D024;
+  --yellow-lt:#FDF6D0;
+  --white:   #FFFFFF;
+  --offwhite:#F5F3EE;
+  --ink:     #0F1A14;
+  --ink2:    #3A4A40;
+  --ink3:    #7A8A80;
+  --radius:  12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    line-height: 1.5;
-  }
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--offwhite);
+  color: var(--ink);
+  min-height: 100vh;
+}
 
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    overflow: hidden;
-    padding: 3.5rem 2rem 2.5rem;
-    text-align: center;
-    border-bottom: 0.5px solid var(--border);
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(232,200,74,0.12) 0%, transparent 70%),
-      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px),
-      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px);
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
-  }
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3rem, 10vw, 6rem);
-    line-height: .95;
-    letter-spacing: .02em;
-    color: var(--text);
-    margin-bottom: 10px;
-  }
-  .hero-title span { color: var(--accent); }
-  .hero-sub {
-    font-size: 14px;
-    color: var(--text2);
-    margin-bottom: 1.75rem;
-  }
+/* ── HERO ── */
+.hero {
+  background: var(--teal);
+  overflow: hidden;
+  position: relative;
+  padding: 3rem 2rem 0;
+}
 
-  /* ── STATS ROW ── */
-  .stats-wrap {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-  .stat-pill {
-    background: var(--surface);
-    border: 0.5px solid var(--border2);
-    border-radius: 30px;
-    padding: 8px 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .stat-pill-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    color: var(--accent);
-    line-height: 1;
-  }
-  .stat-pill-label {
-    font-size: 12px;
-    color: var(--text2);
-  }
+/* decorative blobs */
+.hero-blob1 {
+  position: absolute;
+  top: -40px; right: -60px;
+  width: 260px; height: 260px;
+  background: var(--green);
+  border-radius: 50%;
+  opacity: .35;
+}
+.hero-blob2 {
+  position: absolute;
+  bottom: 20px; left: -50px;
+  width: 180px; height: 180px;
+  background: var(--coral);
+  border-radius: 50%;
+  opacity: .25;
+}
+.hero-blob3 {
+  position: absolute;
+  top: 40px; left: 30%;
+  width: 120px; height: 120px;
+  background: var(--yellow);
+  border-radius: 50%;
+  opacity: .2;
+}
 
-  /* ── MAIN CONTENT ── */
-  .main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
 
-  /* ── FILTERS ── */
-  .filter-bar {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-    align-items: center;
-  }
-  .filter-section {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .filter-divider {
-    width: 0.5px;
-    height: 24px;
-    background: var(--border2);
-    margin: 0 4px;
-  }
-  .filter-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--text3);
-    margin-right: 2px;
-  }
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    padding: 5px 13px;
-    border-radius: 20px;
-    border: 0.5px solid var(--border2);
-    background: transparent;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all .18s;
-    white-space: nowrap;
-  }
-  .pill:hover { background: var(--surface); color: var(--text); }
-  .pill.active { background: var(--accent); color: #0a0e1a; border-color: var(--accent); font-weight: 500; }
-  .pill.norge-pill.active { background: var(--norway); color: #fff; border-color: var(--norway); }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.2);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
 
-  /* ── DAY SECTION ── */
-  .day-section { margin-bottom: 2rem; }
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  line-height: .92;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+.hero-title .accent { color: var(--yellow); }
+.hero-title .outline {
+  -webkit-text-stroke: 2px var(--white);
+  color: transparent;
+}
 
-  .day-header {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: .75rem;
-    padding-bottom: .6rem;
-    border-bottom: 0.5px solid var(--border);
-  }
-  .day-weekday {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: .1em;
-    color: var(--accent);
-  }
-  .day-date {
-    font-size: 17px;
-    font-weight: 500;
-    color: var(--text);
-  }
-  .day-count {
-    margin-left: auto;
-    font-size: 11px;
-    color: var(--text3);
-    background: var(--surface2);
-    padding: 2px 9px;
-    border-radius: 20px;
-    border: 0.5px solid var(--border);
-  }
+.hero-sub {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+}
 
-  /* ── MATCH GRID ── */
-  .match-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    gap: 8px;
-  }
+/* stats strip */
+.hero-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 1.5rem;
+  width: 100%;
+  background: var(--green);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+}
+.hero-stat {
+  flex: 1;
+  padding: 18px 20px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: var(--yellow);
+  line-height: 1;
+  display: block;
+}
+.hero-stat-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  display: block;
+  margin-top: 2px;
+}
+.hero-stat.norge .hero-stat-num { color: var(--coral); }
 
-  .match-card {
-    display: grid;
-    grid-template-columns: 64px 1fr auto;
-    align-items: center;
-    gap: 10px;
-    padding: 11px 13px;
-    background: var(--surface);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    transition: border-color .18s, background .18s;
-  }
-  .match-card:hover {
-    border-color: var(--border2);
-    background: var(--surface2);
-  }
-  .match-card.norge {
-    background: var(--norway-bg);
-    border-color: var(--norway-border);
-  }
-  .match-card.norge:hover { border-color: var(--norway); }
+/* ── NAV TABS ── */
+.nav-wrap {
+  background: var(--green);
+  border-bottom: 3px solid var(--teal);
+  padding: 0 2rem;
+}
+.nav-tabs {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4px;
+}
+.nav-tab {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 14px 20px;
+  margin-bottom: -3px;
+  cursor: pointer;
+  transition: color .18s, border-color .18s;
+}
+.nav-tab:hover { color: rgba(255,255,255,0.85); }
+.nav-tab.active { color: var(--yellow); border-bottom-color: var(--yellow); }
 
-  .m-time {
-    text-align: center;
-  }
-  .m-time-str {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: .04em;
-    color: var(--text);
-    display: block;
-    line-height: 1;
-  }
-  .m-time-tz {
-    font-size: 9px;
-    color: var(--text3);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-  }
+/* ── MAIN ── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
 
-  .m-body {}
-  .m-teams {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-    line-height: 1.3;
-    margin-bottom: 3px;
-  }
-  .m-vs {
-    color: var(--text3);
-    font-weight: 300;
-    margin: 0 4px;
-  }
-  .m-venue {
-    font-size: 11px;
-    color: var(--text3);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+/* ── FILTER BAR ── */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(0,0,0,0.06);
+}
+.filter-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-right: 4px;
+}
+.filter-divider {
+  width: 1px; height: 22px;
+  background: rgba(0,0,0,0.1);
+  margin: 0 6px;
+}
+.pill {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  background: transparent;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+}
+.pill:hover { background: var(--teal-lt); border-color: var(--teal); color: var(--teal-dk); }
+.pill.active { background: var(--teal); border-color: var(--teal); color: var(--white); }
+.pill.norge-pill.active { background: var(--coral); border-color: var(--coral); color: var(--white); }
 
-  .m-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 4px;
-  }
-  .m-group-badge {
-    font-size: 10px;
-    font-weight: 500;
-    padding: 2px 7px;
-    border-radius: 4px;
-    background: var(--blue-bg);
-    color: var(--blue);
-    border: 0.5px solid rgba(55,138,221,0.2);
-    white-space: nowrap;
-  }
-  .m-norway-badge {
-    font-size: 9px;
-    font-weight: 500;
-    padding: 2px 7px;
-    border-radius: 4px;
-    background: var(--norway-bg);
-    color: var(--norway);
-    border: 0.5px solid var(--norway-border);
-    white-space: nowrap;
-  }
+/* ── SHOWN BAR ── */
+.shown-bar {
+  font-size: 12px;
+  color: var(--ink3);
+  margin-bottom: 1rem;
+}
+.shown-bar strong { color: var(--ink2); }
 
-  /* ── NO RESULTS ── */
-  .no-results {
-    padding: 3rem;
-    text-align: center;
-    color: var(--text3);
-    font-size: 14px;
-    border: 0.5px dashed var(--border2);
-    border-radius: var(--radius-lg);
-  }
+/* ── DAY SECTION ── */
+.day-section { margin-bottom: 2rem; }
 
-  /* ── SHOWN COUNTER ── */
-  .shown-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.25rem;
-    font-size: 12px;
-    color: var(--text3);
-  }
-  .shown-bar strong { color: var(--text2); }
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: .75rem;
+}
+.day-chip {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: var(--teal);
+  color: var(--white);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+.day-chip.kampdag { background: var(--coral); }
+.day-date {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+.day-count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink3);
+  background: var(--white);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(0,0,0,0.08);
+}
 
-  /* ── FOOTER ── */
-  footer {
-    text-align: center;
-    padding: 1.5rem 1rem 2.5rem;
-    font-size: 12px;
-    color: var(--text3);
-    border-top: 0.5px solid var(--border);
-  }
+/* ── MATCH GRID ── */
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 8px;
+}
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 600px) {
-    .hero { padding: 2.5rem 1.25rem 2rem; }
-    .main { padding: 1.5rem 1rem 3rem; }
-    .filter-divider { display: none; }
-    .match-grid { grid-template-columns: 1fr; }
-    .m-venue { max-width: 120px; }
-  }
+.match-card {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.07);
+  border-radius: var(--radius);
+  transition: border-color .18s, box-shadow .18s;
+}
+.match-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 2px 12px rgba(43,191,179,0.12);
+}
+.match-card.norge {
+  background: var(--coral-lt);
+  border-color: var(--coral);
+}
+.match-card.norge:hover { box-shadow: 0 2px 12px rgba(232,75,58,0.15); }
+
+.m-time { text-align: center; }
+.m-time-str {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--ink);
+  display: block;
+  line-height: 1;
+}
+.m-time-tz {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ink3);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.m-teams {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+.m-vs { color: var(--ink3); font-weight: 400; margin: 0 4px; }
+.m-venue { font-size: 11px; color: var(--ink3); }
+
+.m-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.m-group-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--teal-lt);
+  color: var(--teal-dk);
+  border: 1px solid rgba(43,191,179,0.3);
+  white-space: nowrap;
+}
+.m-norway-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--coral);
+  color: var(--white);
+  white-space: nowrap;
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  padding: 3rem;
+  text-align: center;
+  color: var(--ink3);
+  font-size: 14px;
+  border: 2px dashed rgba(0,0,0,0.1);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+}
+
+/* ── TRIP PROGRAM ── */
+.trip-section { margin-bottom: 2.5rem; }
+
+.trip-city-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--green);
+  color: var(--white);
+}
+.trip-city-header.boston { background: var(--teal-dk); }
+
+.trip-city-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+.trip-city-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--white);
+}
+.trip-city-dates {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  margin-left: auto;
+}
+
+.trip-timeline { display: flex; flex-direction: column; gap: 6px; }
+
+.trip-row {
+  display: grid;
+  grid-template-columns: 86px 88px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: var(--white);
+  border: 1.5px solid rgba(0,0,0,0.07);
+  border-radius: var(--radius);
+  transition: border-color .18s;
+}
+.trip-row:hover { border-color: var(--teal); }
+.trip-row.kampdag { background: var(--coral-lt); border-color: rgba(232,75,58,0.35); }
+.trip-row.kampdag:hover { border-color: var(--coral); }
+.trip-row.reise { background: var(--yellow-lt); border-color: rgba(242,208,36,0.4); }
+.trip-row.sosialt { background: var(--green-lt); border-color: rgba(30,107,60,0.25); }
+
+.tr-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink2);
+  white-space: nowrap;
+}
+.tr-time {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+}
+.tr-time.muted {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink3);
+  font-style: italic;
+}
+.tr-detail { font-size: 13px; font-weight: 500; color: var(--ink); }
+.tr-detail small { display: block; font-size: 11px; color: var(--ink3); font-weight: 400; margin-top: 2px; }
+
+.tr-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 4px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.badge-kamp { background: var(--coral); color: var(--white); }
+.badge-reise { background: var(--yellow); color: var(--ink); }
+.badge-sosialt { background: var(--green); color: var(--white); }
+.badge-hotell { background: var(--teal); color: var(--white); }
+.badge-fri { background: rgba(0,0,0,0.07); color: var(--ink3); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--green);
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: .04em;
+}
+footer strong { color: rgba(255,255,255,0.85); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .hero { padding: 2rem 1.25rem 0; }
+  .hero-stats { flex-wrap: wrap; }
+  .hero-stat { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .main { padding: 1.25rem 1rem 3rem; }
+  .filter-divider { display: none; }
+  .match-grid { grid-template-columns: 1fr; }
+  .trip-row { grid-template-columns: 70px 70px 1fr; }
+  .tr-badge { display: none; }
+  .nav-wrap { padding: 0 1rem; }
+  .nav-tab { padding: 12px 12px; font-size: 13px; }
+}
 </style>
 </head>
 <body>
 
+<!-- ── HERO ── -->
 <header class="hero">
-  <p class="hero-eyebrow">FIFA World Cup 2026 &nbsp;·&nbsp; New York-tid (ET)</p>
-  <h1 class="hero-title">VM <span>2026</span><br>Kampprogram</h1>
-  <p class="hero-sub">Gruppespill &nbsp;·&nbsp; 20–27 juni &nbsp;·&nbsp; Alle tider i Eastern Time (ET)</p>
-  <div class="stats-wrap">
-    <div class="stat-pill"><span class="stat-pill-num">40</span><span class="stat-pill-label">kamper</span></div>
-    <div class="stat-pill"><span class="stat-pill-num">8</span><span class="stat-pill-label">dager</span></div>
-    <div class="stat-pill"><span class="stat-pill-num">12</span><span class="stat-pill-label">grupper</span></div>
-    <div class="stat-pill"><span class="stat-pill-num" style="color:var(--norway)">2</span><span class="stat-pill-label">Norge-kamper</span></div>
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-blob3"></div>
+  <div class="hero-inner">
+    <span class="hero-badge">⚽ FIFA World Cup 2026 · New York-tid ET</span>
+    <h1 class="hero-title">
+      VM<br>
+      <span class="accent">2026</span><br>
+      <span class="outline">Kampprogram</span>
+    </h1>
+    <p class="hero-sub">Gruppespill · 20–27 juni · Alle tider i Eastern Time (ET)</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">40</span>
+        <span class="hero-stat-label">kamper</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">8</span>
+        <span class="hero-stat-label">dager</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">12</span>
+        <span class="hero-stat-label">grupper</span>
+      </div>
+      <div class="hero-stat norge">
+        <span class="hero-stat-num">2</span>
+        <span class="hero-stat-label">🇳🇴 Norge</span>
+      </div>
+    </div>
   </div>
 </header>
 
+<!-- ── NAV ── -->
+<nav class="nav-wrap" aria-label="Sidenavigasjon">
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-tab="kampprogram">⚽ Kampprogram</button>
+    <button class="nav-tab" data-tab="turprogram">🗺 Turprogram</button>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
 <main class="main">
+
+<!-- TAB: KAMPPROGRAM -->
+<div class="tab-content active" id="tab-kampprogram">
 
   <div class="filter-bar">
     <span class="filter-label">Dag</span>
-    <div class="filter-section" id="day-filters">
+    <div style="display:flex;gap:6px;flex-wrap:wrap;">
       <button class="pill active" data-type="day" data-val="all">Alle</button>
       <button class="pill" data-type="day" data-val="20">20/6</button>
       <button class="pill" data-type="day" data-val="21">21/6</button>
@@ -360,22 +559,133 @@
       <button class="pill" data-type="day" data-val="27">27/6</button>
     </div>
     <div class="filter-divider"></div>
-    <div class="filter-section">
+    <div style="display:flex;gap:6px;">
       <button class="pill active" data-type="focus" data-val="all">Alle lag</button>
       <button class="pill norge-pill" data-type="focus" data-val="norge">🇳🇴 Kun Norge</button>
     </div>
   </div>
 
   <div class="shown-bar">
-    <span>Viser <strong id="s-shown">40</strong> av <strong>40</strong> kamper</span>
+    Viser <strong id="s-shown">40</strong> av <strong>40</strong> kamper
   </div>
 
   <div id="schedule"></div>
 
+</div>
+
+<!-- TAB: TURPROGRAM -->
+<div class="tab-content" id="tab-turprogram">
+
+  <div class="trip-section">
+    <div class="trip-city-header">
+      <div class="trip-city-dot"></div>
+      <span class="trip-city-name">New York</span>
+      <span class="trip-city-dates">19–23 juni</span>
+    </div>
+    <div class="trip-timeline">
+      <div class="trip-row reise">
+        <span class="tr-date">Fre 19.06</span>
+        <span class="tr-time">19:10</span>
+        <div class="tr-detail">Ankomst New York JFK
+          <small>Innsjekk hotell NY · Ansvarlig: Philip</small>
+        </div>
+        <span class="tr-badge badge-reise">Ankomst</span>
+      </div>
+      <div class="trip-row">
+        <span class="tr-date">Lør 20.06</span>
+        <span class="tr-time muted">–</span>
+        <div class="tr-detail">Fri dag i New York</div>
+        <span class="tr-badge badge-fri">Fri dag</span>
+      </div>
+      <div class="trip-row sosialt">
+        <span class="tr-date">Søn 21.06</span>
+        <span class="tr-time">16:00</span>
+        <div class="tr-detail">Båttur med Svabba
+          <small>Ansvarlig: Jonas</small>
+        </div>
+        <span class="tr-badge badge-sosialt">Supportertreff</span>
+      </div>
+      <div class="trip-row sosialt">
+        <span class="tr-date">Man 22.06</span>
+        <span class="tr-time">13:00</span>
+        <div class="tr-detail">Oppladning – Meadowlands «The Backyard»
+          <small>Minibuss t/r stadion · Ansvarlig: Jonas / Rune Fossberg</small>
+        </div>
+        <span class="tr-badge badge-sosialt">Supportertreff</span>
+      </div>
+      <div class="trip-row kampdag">
+        <span class="tr-date">Man 22.06</span>
+        <span class="tr-time">20:00</span>
+        <div class="tr-detail">🇳🇴 Norge vs. Senegal
+          <small>MetLife Stadium, New Jersey</small>
+        </div>
+        <span class="tr-badge badge-kamp">Kamp</span>
+      </div>
+      <div class="trip-row">
+        <span class="tr-date">Tir 23.06</span>
+        <span class="tr-time muted">–</span>
+        <div class="tr-detail">Fri dag</div>
+        <span class="tr-badge badge-fri">Fri dag</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="trip-section">
+    <div class="trip-city-header boston">
+      <div class="trip-city-dot"></div>
+      <span class="trip-city-name">Boston</span>
+      <span class="trip-city-dates">24–27 juni</span>
+    </div>
+    <div class="trip-timeline">
+      <div class="trip-row reise">
+        <span class="tr-date">Ons 24.06</span>
+        <span class="tr-time muted">Tog</span>
+        <div class="tr-detail">Avreise til Boston – tog
+          <small>Innsjekk The Godfrey Hotel · Ansvarlig: Philip / Jonas</small>
+        </div>
+        <span class="tr-badge badge-reise">Reisedag</span>
+      </div>
+      <div class="trip-row sosialt">
+        <span class="tr-date">Tor 25.06</span>
+        <span class="tr-time">18:00</span>
+        <div class="tr-detail">Supportertreff – Roadrunner, Boston
+          <small>DJ, quiz, Bausa m.fl. · Ansvarlig: Rune Størset</small>
+        </div>
+        <span class="tr-badge badge-sosialt">Supportertreff</span>
+      </div>
+      <div class="trip-row kampdag">
+        <span class="tr-date">Fre 26.06</span>
+        <span class="tr-time">09:30</span>
+        <div class="tr-detail">Tog fra South Station – boarding gruppe B
+          <small>Ansvarlig: Jonas og Størset · Jonas: 3 billetter, Rune Størset: 2 billetter</small>
+        </div>
+        <span class="tr-badge badge-reise">Transport</span>
+      </div>
+      <div class="trip-row kampdag">
+        <span class="tr-date">Fre 26.06</span>
+        <span class="tr-time">15:00</span>
+        <div class="tr-detail">🇳🇴 Norge vs. Frankrike
+          <small>Gillette Stadium, Foxborough</small>
+        </div>
+        <span class="tr-badge badge-kamp">Kamp</span>
+      </div>
+      <div class="trip-row reise">
+        <span class="tr-date">Lør 27.06</span>
+        <span class="tr-time">18:55</span>
+        <div class="tr-detail">Check-out og avreise
+          <small>Fly hjem</small>
+        </div>
+        <span class="tr-badge badge-reise">Hjemreise</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end turprogram -->
+
 </main>
 
 <footer>
-  VM 2026 &nbsp;·&nbsp; Kampprogram 20–27 juni &nbsp;·&nbsp; Alle tider i New York (ET)
+  <strong>VM 2026</strong> · Kampprogram 20–27 juni · Alle tider i New York (ET)
 </footer>
 
 <script>
@@ -422,26 +732,23 @@ const MATCHES = [
   {day:"27",dname:"Lørdag 27. juni",time:"22:00",grp:"J",home:"Jordan",away:"Argentina",venue:"AT&T Stadium, Arlington",norge:false},
 ];
 
+const KAMPDAGER = ["22","26"];
 let activeDay = "all";
 let activeFocus = "all";
 
 function render() {
   const container = document.getElementById("schedule");
   container.innerHTML = "";
-
   const filtered = MATCHES.filter(m => {
     if (activeDay !== "all" && m.day !== activeDay) return false;
     if (activeFocus === "norge" && !m.norge) return false;
     return true;
   });
-
   document.getElementById("s-shown").textContent = filtered.length;
-
   if (filtered.length === 0) {
     container.innerHTML = '<div class="no-results">Ingen kamper matcher valgt filter</div>';
     return;
   }
-
   const days = [...new Set(filtered.map(m => m.day))];
   days.forEach(day => {
     const dayMatches = filtered.filter(m => m.day === day);
@@ -449,22 +756,20 @@ function render() {
     const parts = dname.split(" ");
     const weekday = parts[0];
     const dateStr = parts.slice(1).join(" ");
+    const isKampdag = KAMPDAGER.includes(day);
 
     const sec = document.createElement("div");
     sec.className = "day-section";
+    sec.innerHTML = `
+      <div class="day-header">
+        <span class="day-chip${isKampdag ? ' kampdag' : ''}">${isKampdag ? '🇳🇴 Kampdag' : weekday}</span>
+        <span class="day-date">${dateStr}</span>
+        <span class="day-count">${dayMatches.length} kamp${dayMatches.length > 1 ? 'er' : ''}</span>
+      </div>
+      <div class="match-grid" id="grid-${day}"></div>`;
+    container.appendChild(sec);
 
-    const header = document.createElement("div");
-    header.className = "day-header";
-    header.innerHTML = `
-      <span class="day-weekday">${weekday}</span>
-      <span class="day-date">${dateStr}</span>
-      <span class="day-count">${dayMatches.length} kamp${dayMatches.length > 1 ? "er" : ""}</span>
-    `;
-    sec.appendChild(header);
-
-    const grid = document.createElement("div");
-    grid.className = "match-grid";
-
+    const grid = sec.querySelector(".match-grid");
     dayMatches.forEach(m => {
       const card = document.createElement("div");
       card.className = "match-card" + (m.norge ? " norge" : "");
@@ -473,20 +778,16 @@ function render() {
           <span class="m-time-str">${m.time}</span>
           <span class="m-time-tz">ET</span>
         </div>
-        <div class="m-body">
+        <div>
           <div class="m-teams">${m.home} <span class="m-vs">vs</span> ${m.away}</div>
           <div class="m-venue">${m.venue}</div>
         </div>
         <div class="m-right">
           <span class="m-group-badge">Gr. ${m.grp}</span>
-          ${m.norge ? '<span class="m-norway-badge">Norge</span>' : ''}
-        </div>
-      `;
+          ${m.norge ? '<span class="m-norway-badge">🇳🇴 Norge</span>' : ''}
+        </div>`;
       grid.appendChild(card);
     });
-
-    sec.appendChild(grid);
-    container.appendChild(sec);
   });
 }
 
@@ -498,13 +799,20 @@ document.querySelectorAll(".pill[data-type='day']").forEach(p => {
     render();
   });
 });
-
 document.querySelectorAll(".pill[data-type='focus']").forEach(p => {
   p.addEventListener("click", () => {
     document.querySelectorAll(".pill[data-type='focus']").forEach(x => x.classList.remove("active"));
     p.classList.add("active");
     activeFocus = p.dataset.val;
     render();
+  });
+});
+document.querySelectorAll(".nav-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById("tab-" + tab.dataset.tab).classList.add("active");
   });
 });
 
