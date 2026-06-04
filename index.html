@@ -3,551 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VM 2026 – Kampprogram</title>
+<title>VM 2026 – Norgestur</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VM 2026">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1E6B3C">
+<link rel="apple-touch-icon" href="data:image/jpeg;base64,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">
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --teal:    #2BBFB3;
-  --teal-dk: #1A8A81;
-  --teal-lt: #D6F3F0;
-  --green:   #1E6B3C;
-  --green-lt:#E4F2EB;
-  --coral:   #E84B3A;
-  --coral-lt:#FCEAE8;
-  --yellow:  #F2D024;
-  --yellow-lt:#FDF6D0;
-  --white:   #FFFFFF;
-  --offwhite:#F5F3EE;
-  --ink:     #0F1A14;
-  --ink2:    #3A4A40;
-  --ink3:    #7A8A80;
-  --radius:  12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Barlow', sans-serif;
-  background: var(--offwhite);
-  color: var(--ink);
-  min-height: 100vh;
-}
-
-/* ── HERO ── */
-.hero {
-  background: var(--teal);
-  overflow: hidden;
-  position: relative;
-  padding: 3rem 2rem 0;
-}
-
-/* decorative blobs */
-.hero-blob1 {
-  position: absolute;
-  top: -40px; right: -60px;
-  width: 260px; height: 260px;
-  background: var(--green);
-  border-radius: 50%;
-  opacity: .35;
-}
-.hero-blob2 {
-  position: absolute;
-  bottom: 20px; left: -50px;
-  width: 180px; height: 180px;
-  background: var(--coral);
-  border-radius: 50%;
-  opacity: .25;
-}
-.hero-blob3 {
-  position: absolute;
-  top: 40px; left: 30%;
-  width: 120px; height: 120px;
-  background: var(--yellow);
-  border-radius: 50%;
-  opacity: .2;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255,255,255,0.2);
-  color: var(--white);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 30px;
-  border: 1px solid rgba(255,255,255,0.3);
-}
-
-.hero-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: clamp(3.5rem, 12vw, 7rem);
-  line-height: .92;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: -.01em;
-}
-.hero-title .accent { color: var(--yellow); }
-.hero-title .outline {
-  -webkit-text-stroke: 2px var(--white);
-  color: transparent;
-}
-
-.hero-sub {
-  font-size: 15px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.75);
-  max-width: 480px;
-}
-
-/* stats strip */
-.hero-stats {
-  display: flex;
-  gap: 0;
-  margin-top: 1.5rem;
-  width: 100%;
-  background: var(--green);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  overflow: hidden;
-}
-.hero-stat {
-  flex: 1;
-  padding: 18px 20px;
-  border-right: 1px solid rgba(255,255,255,0.1);
-  text-align: center;
-}
-.hero-stat:last-child { border-right: none; }
-.hero-stat-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 2.2rem;
-  color: var(--yellow);
-  line-height: 1;
-  display: block;
-}
-.hero-stat-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.65);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  display: block;
-  margin-top: 2px;
-}
-.hero-stat.norge .hero-stat-num { color: var(--coral); }
-
-/* ── NAV TABS ── */
-.nav-wrap {
-  background: var(--green);
-  border-bottom: 3px solid var(--teal);
-  padding: 0 2rem;
-}
-.nav-tabs {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 4px;
-}
-.nav-tab {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  background: transparent;
-  border: none;
-  border-bottom: 3px solid transparent;
-  padding: 14px 20px;
-  margin-bottom: -3px;
-  cursor: pointer;
-  transition: color .18s, border-color .18s;
-}
-.nav-tab:hover { color: rgba(255,255,255,0.85); }
-.nav-tab.active { color: var(--yellow); border-bottom-color: var(--yellow); }
-
-/* ── MAIN ── */
-.main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
-}
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-/* ── FILTER BAR ── */
-.filter-bar {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 1rem 1.25rem;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  border: 1.5px solid rgba(0,0,0,0.06);
-}
-.filter-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink3);
-  margin-right: 4px;
-}
-.filter-divider {
-  width: 1px; height: 22px;
-  background: rgba(0,0,0,0.1);
-  margin: 0 6px;
-}
-.pill {
-  font-family: 'Barlow', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 5px 13px;
-  border-radius: 20px;
-  border: 1.5px solid rgba(0,0,0,0.12);
-  background: transparent;
-  color: var(--ink2);
-  cursor: pointer;
-  transition: all .15s;
-  white-space: nowrap;
-}
-.pill:hover { background: var(--teal-lt); border-color: var(--teal); color: var(--teal-dk); }
-.pill.active { background: var(--teal); border-color: var(--teal); color: var(--white); }
-.pill.norge-pill.active { background: var(--coral); border-color: var(--coral); color: var(--white); }
-
-/* ── SHOWN BAR ── */
-.shown-bar {
-  font-size: 12px;
-  color: var(--ink3);
-  margin-bottom: 1rem;
-}
-.shown-bar strong { color: var(--ink2); }
-
-/* ── DAY SECTION ── */
-.day-section { margin-bottom: 2rem; }
-
-.day-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: .75rem;
-}
-.day-chip {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  background: var(--teal);
-  color: var(--white);
-  padding: 3px 10px;
-  border-radius: 4px;
-}
-.day-chip.kampdag { background: var(--coral); }
-.day-date {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 19px;
-  color: var(--ink);
-  text-transform: uppercase;
-  letter-spacing: .02em;
-}
-.day-count {
-  margin-left: auto;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--ink3);
-  background: var(--white);
-  padding: 3px 10px;
-  border-radius: 20px;
-  border: 1.5px solid rgba(0,0,0,0.08);
-}
-
-/* ── MATCH GRID ── */
-.match-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 8px;
-}
-
-.match-card {
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  background: var(--white);
-  border: 1.5px solid rgba(0,0,0,0.07);
-  border-radius: var(--radius);
-  transition: border-color .18s, box-shadow .18s;
-}
-.match-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 2px 12px rgba(43,191,179,0.12);
-}
-.match-card.norge {
-  background: var(--coral-lt);
-  border-color: var(--coral);
-}
-.match-card.norge:hover { box-shadow: 0 2px 12px rgba(232,75,58,0.15); }
-
-.m-time { text-align: center; }
-.m-time-str {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--ink);
-  display: block;
-  line-height: 1;
-}
-.m-time-tz {
-  font-size: 9px;
-  font-weight: 600;
-  color: var(--ink3);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.m-teams {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.3;
-  margin-bottom: 2px;
-}
-.m-vs { color: var(--ink3); font-weight: 400; margin: 0 4px; }
-.m-venue { font-size: 11px; color: var(--ink3); }
-
-.m-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-}
-.m-group-badge {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: var(--teal-lt);
-  color: var(--teal-dk);
-  border: 1px solid rgba(43,191,179,0.3);
-  white-space: nowrap;
-}
-.m-norway-badge {
-  font-size: 9px;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 4px;
-  background: var(--coral);
-  color: var(--white);
-  white-space: nowrap;
-}
-
-/* ── NO RESULTS ── */
-.no-results {
-  padding: 3rem;
-  text-align: center;
-  color: var(--ink3);
-  font-size: 14px;
-  border: 2px dashed rgba(0,0,0,0.1);
-  border-radius: var(--radius-lg);
-  background: var(--white);
-}
-
-/* ── TRIP PROGRAM ── */
-.trip-section { margin-bottom: 2.5rem; }
-
-.trip-city-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 1rem;
-  padding: 14px 18px;
-  border-radius: var(--radius-lg);
-  background: var(--green);
-  color: var(--white);
-}
-.trip-city-header.boston { background: var(--teal-dk); }
-
-.trip-city-dot {
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--yellow);
-  flex-shrink: 0;
-}
-.trip-city-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: var(--white);
-}
-.trip-city-dates {
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.65);
-  margin-left: auto;
-}
-
-.trip-timeline { display: flex; flex-direction: column; gap: 6px; }
-
-.trip-row {
-  display: grid;
-  grid-template-columns: 86px 88px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 14px;
-  background: var(--white);
-  border: 1.5px solid rgba(0,0,0,0.07);
-  border-radius: var(--radius);
-  transition: border-color .18s;
-}
-.trip-row:hover { border-color: var(--teal); }
-.trip-row.kampdag { background: var(--coral-lt); border-color: rgba(232,75,58,0.35); }
-.trip-row.kampdag:hover { border-color: var(--coral); }
-.trip-row.reise { background: var(--yellow-lt); border-color: rgba(242,208,36,0.4); }
-.trip-row.sosialt { background: var(--green-lt); border-color: rgba(30,107,60,0.25); }
-
-.tr-date {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ink2);
-  white-space: nowrap;
-}
-.tr-time {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--ink);
-}
-.tr-time.muted {
-  font-family: 'Barlow', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--ink3);
-  font-style: italic;
-}
-.tr-detail { font-size: 13px; font-weight: 500; color: var(--ink); }
-.tr-detail small { display: block; font-size: 11px; color: var(--ink3); font-weight: 400; margin-top: 2px; }
-
-.tr-badge {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 4px;
-  white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-}
-.badge-kamp { background: var(--coral); color: var(--white); }
-.badge-reise { background: var(--yellow); color: var(--ink); }
-.badge-sosialt { background: var(--green); color: var(--white); }
-.badge-hotell { background: var(--teal); color: var(--white); }
-.badge-fri { background: rgba(0,0,0,0.07); color: var(--ink3); }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--green);
-  text-align: center;
-  padding: 1.5rem 1rem 2rem;
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: .04em;
-}
-footer strong { color: rgba(255,255,255,0.85); }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 600px) {
-  .hero { padding: 2rem 1.25rem 0; }
-  .hero-stats { flex-wrap: wrap; }
-  .hero-stat { min-width: 50%; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .main { padding: 1.25rem 1rem 3rem; }
-  .filter-divider { display: none; }
-  .match-grid { grid-template-columns: 1fr; }
-  .trip-row { grid-template-columns: 70px 70px 1fr; }
-  .tr-badge { display: none; }
-  .nav-wrap { padding: 0 1rem; }
-  .nav-tab { padding: 12px 12px; font-size: 13px; }
-}
+:root{--teal:#2BBFB3;--teal-dk:#1A8A81;--teal-lt:#D6F3F0;--green:#1E6B3C;--green-lt:#E4F2EB;--coral:#E84B3A;--coral-lt:#FCEAE8;--yellow:#F2D024;--yellow-lt:#FDF6D0;--white:#FFFFFF;--offwhite:#F5F3EE;--ink:#0F1A14;--ink2:#3A4A40;--ink3:#7A8A80;--radius:12px;--radius-lg:20px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Barlow',sans-serif;background:var(--offwhite);color:var(--ink);min-height:100vh}
+.hero{background:var(--teal);overflow:hidden;position:relative;padding:3rem 2rem 0}
+.hero-blob1{position:absolute;top:-40px;right:-60px;width:260px;height:260px;background:var(--green);border-radius:50%;opacity:.35}
+.hero-blob2{position:absolute;bottom:20px;left:-50px;width:180px;height:180px;background:var(--coral);border-radius:50%;opacity:.25}
+.hero-blob3{position:absolute;top:40px;left:30%;width:120px;height:120px;background:var(--yellow);border-radius:50%;opacity:.2}
+.hero-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.2);color:var(--white);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:30px;border:1px solid rgba(255,255,255,.3)}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(3.5rem,12vw,7rem);line-height:.92;color:var(--white);text-transform:uppercase;letter-spacing:-.01em}
+.hero-title .accent{color:var(--yellow)}.hero-title .outline{-webkit-text-stroke:2px var(--white);color:transparent}
+.hero-sub{font-size:15px;font-weight:500;color:rgba(255,255,255,.75);max-width:480px}
+.hero-stats{display:flex;margin-top:1.5rem;width:100%;background:var(--green);border-radius:var(--radius-lg) var(--radius-lg) 0 0;overflow:hidden}
+.hero-stat{flex:1;padding:18px 20px;border-right:1px solid rgba(255,255,255,.1);text-align:center}
+.hero-stat:last-child{border-right:none}
+.hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.2rem;color:var(--yellow);line-height:1;display:block}
+.hero-stat-label{font-size:11px;font-weight:500;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.08em;display:block;margin-top:2px}
+.hero-stat.norge .hero-stat-num{color:var(--coral)}
+.nav-wrap{background:var(--green);border-bottom:3px solid var(--teal);padding:0 1rem;overflow-x:auto}
+.nav-tabs{max-width:1100px;margin:0 auto;display:flex;white-space:nowrap}
+.nav-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);background:transparent;border:none;border-bottom:3px solid transparent;padding:13px 16px;margin-bottom:-3px;cursor:pointer;transition:color .18s,border-color .18s;white-space:nowrap}
+.nav-tab:hover{color:rgba(255,255,255,.85)}.nav-tab.active{color:var(--yellow);border-bottom-color:var(--yellow)}
+.main{max-width:1100px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.tab-content{display:none}.tab-content.active{display:block}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:1.5rem;padding:1rem 1.25rem;background:var(--white);border-radius:var(--radius-lg);border:1.5px solid rgba(0,0,0,.06)}
+.filter-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-right:4px}
+.filter-divider{width:1px;height:22px;background:rgba(0,0,0,.1);margin:0 6px}
+.pill{font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;padding:5px 13px;border-radius:20px;border:1.5px solid rgba(0,0,0,.12);background:transparent;color:var(--ink2);cursor:pointer;transition:all .15s;white-space:nowrap}
+.pill:hover{background:var(--teal-lt);border-color:var(--teal);color:var(--teal-dk)}
+.pill.active{background:var(--teal);border-color:var(--teal);color:var(--white)}
+.pill.norge-pill.active{background:var(--coral);border-color:var(--coral);color:var(--white)}
+.shown-bar{font-size:12px;color:var(--ink3);margin-bottom:1rem}.shown-bar strong{color:var(--ink2)}
+.day-section{margin-bottom:2rem}
+.day-header{display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+.day-chip{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--teal);color:var(--white);padding:3px 10px;border-radius:4px}
+.day-chip.kampdag{background:var(--coral)}
+.day-date{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:19px;color:var(--ink);text-transform:uppercase;letter-spacing:.02em}
+.day-count{margin-left:auto;font-size:11px;font-weight:600;color:var(--ink3);background:var(--white);padding:3px 10px;border-radius:20px;border:1.5px solid rgba(0,0,0,.08)}
+.match-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:8px}
+.match-card{display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:10px;padding:12px 14px;background:var(--white);border:1.5px solid rgba(0,0,0,.07);border-radius:var(--radius);transition:border-color .18s,box-shadow .18s}
+.match-card:hover{border-color:var(--teal);box-shadow:0 2px 12px rgba(43,191,179,.12)}
+.match-card.norge{background:var(--coral-lt);border-color:var(--coral)}
+.m-time{text-align:center}.m-time-str{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--ink);display:block;line-height:1}
+.m-time-tz{font-size:9px;font-weight:600;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase}
+.m-teams{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:2px}
+.m-vs{color:var(--ink3);font-weight:400;margin:0 4px}.m-venue{font-size:11px;color:var(--ink3)}
+.m-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.m-group-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;background:var(--teal-lt);color:var(--teal-dk);border:1px solid rgba(43,191,179,.3);white-space:nowrap}
+.m-norway-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--coral);color:var(--white);white-space:nowrap}
+.no-results{padding:3rem;text-align:center;color:var(--ink3);font-size:14px;border:2px dashed rgba(0,0,0,.1);border-radius:var(--radius-lg);background:var(--white)}
+.trip-section{margin-bottom:2.5rem}
+.trip-city-header{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding:14px 18px;border-radius:var(--radius-lg);background:var(--green)}
+.trip-city-header.boston{background:var(--teal-dk)}
+.trip-city-dot{width:12px;height:12px;border-radius:50%;background:var(--yellow);flex-shrink:0}
+.trip-city-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:.06em;color:var(--white)}
+.trip-city-dates{font-size:12px;font-weight:500;color:rgba(255,255,255,.65);margin-left:auto}
+.trip-timeline{display:flex;flex-direction:column;gap:6px}
+.trip-row{display:grid;grid-template-columns:86px 88px 1fr auto;align-items:center;gap:10px;padding:11px 14px;background:var(--white);border:1.5px solid rgba(0,0,0,.07);border-radius:var(--radius);transition:border-color .18s}
+.trip-row:hover{border-color:var(--teal)}.trip-row.kampdag{background:var(--coral-lt);border-color:rgba(232,75,58,.35)}
+.trip-row.reise{background:var(--yellow-lt);border-color:rgba(242,208,36,.4)}
+.trip-row.sosialt{background:var(--green-lt);border-color:rgba(30,107,60,.25)}
+.tr-date{font-size:12px;font-weight:600;color:var(--ink2);white-space:nowrap}
+.tr-time{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--ink)}
+.tr-time.muted{font-family:'Barlow',sans-serif;font-size:12px;font-weight:400;color:var(--ink3);font-style:italic}
+.tr-detail{font-size:13px;font-weight:500;color:var(--ink)}.tr-detail small{display:block;font-size:11px;color:var(--ink3);font-weight:400;margin-top:2px}
+.tr-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:4px;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em}
+.badge-kamp{background:var(--coral);color:var(--white)}.badge-reise{background:var(--yellow);color:var(--ink)}
+.badge-sosialt{background:var(--green);color:var(--white)}.badge-fri{background:rgba(0,0,0,.07);color:var(--ink3)}
+.hotels-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:20px}
+.hotel-card{background:var(--white);border:1.5px solid rgba(0,0,0,.07);border-radius:var(--radius-lg);overflow:hidden}
+.hotel-card-header{padding:20px 22px 16px;border-bottom:1.5px solid rgba(0,0,0,.06)}
+.hotel-city-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--white);background:var(--teal);padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:10px}
+.hotel-city-tag.boston{background:var(--teal-dk)}.hotel-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px;color:var(--ink);margin-bottom:4px}
+.hotel-address{font-size:13px;color:var(--ink3)}.hotel-body{padding:18px 22px}
+.hotel-desc{font-size:14px;color:var(--ink2);line-height:1.65;margin-bottom:16px}
+.hotel-facts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.hotel-fact{font-size:11px;font-weight:600;color:var(--teal-dk);background:var(--teal-lt);padding:4px 10px;border-radius:20px}
+.hotel-map-btn{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:var(--white);font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;padding:9px 18px;border-radius:8px;text-decoration:none;transition:background .18s}
+.hotel-map-btn:hover{background:var(--teal-dk)}.hotel-dates{font-size:12px;color:var(--ink3);margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.06)}
+.section-intro{margin-bottom:1.5rem}.section-intro h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:24px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-bottom:4px}
+.section-intro p{font-size:13px;color:var(--ink3)}
+.pos-section{margin-bottom:2rem}.pos-header{display:flex;align-items:center;gap:10px;margin-bottom:.75rem;padding-bottom:.6rem;border-bottom:1.5px solid rgba(0,0,0,.07)}
+.pos-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:4px;color:var(--white)}
+.pos-tag.mk{background:var(--ink2)}.pos-tag.fb{background:var(--green)}.pos-tag.mb{background:var(--teal-dk)}.pos-tag.an{background:var(--coral)}
+.pos-count{font-size:12px;color:var(--ink3);margin-left:auto}
+.players-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.player-card{background:var(--white);border:1.5px solid rgba(0,0,0,.07);border-radius:var(--radius);padding:12px 14px;transition:border-color .18s}
+.player-card:hover{border-color:var(--teal)}.player-card.star{border-color:var(--yellow);background:var(--yellow-lt)}
+.player-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}.player-club{font-size:12px;color:var(--ink3);margin-bottom:8px}
+.player-stats{display:flex;gap:8px}.player-stat{text-align:center;flex:1;background:var(--offwhite);border-radius:6px;padding:5px 4px}
+.player-stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--ink);display:block;line-height:1}
+.player-stat-label{font-size:9px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.player-card.star .player-stat{background:rgba(255,255,255,.6)}
+.captain-badge{display:inline-block;font-size:9px;font-weight:700;background:var(--yellow);color:var(--ink);padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:2px;text-transform:uppercase;letter-spacing:.06em}
+.calc-wrap{max-width:520px;margin:0 auto}.calc-card{background:var(--white);border:1.5px solid rgba(0,0,0,.07);border-radius:var(--radius-lg);padding:28px 28px 24px;margin-bottom:16px}
+.calc-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:20px;color:var(--ink);margin-bottom:20px;text-transform:uppercase;letter-spacing:.04em}
+.calc-row{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:end;margin-bottom:16px}
+.calc-field label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);display:block;margin-bottom:6px}
+.calc-field input{width:100%;font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;color:var(--ink);background:var(--offwhite);border:1.5px solid rgba(0,0,0,.1);border-radius:8px;padding:10px 14px;outline:none;transition:border-color .18s}
+.calc-field input:focus{border-color:var(--teal)}
+.calc-swap{background:var(--teal);color:var(--white);border:none;border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s;flex-shrink:0;margin-bottom:2px}
+.calc-swap:hover{background:var(--teal-dk)}.rate-info{font-size:12px;color:var(--ink3);text-align:center;margin-top:8px}.rate-info strong{color:var(--ink2)}
+.quick-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.quick-btn{font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;border:1.5px solid rgba(0,0,0,.12);background:transparent;color:var(--ink2);cursor:pointer;transition:all .15s}
+.quick-btn:hover{background:var(--teal-lt);border-color:var(--teal);color:var(--teal-dk)}
+.calc-tip{background:var(--green-lt);border:1.5px solid rgba(30,107,60,.2);border-radius:var(--radius);padding:14px 16px;font-size:13px;color:var(--ink2);line-height:1.6}
+.calc-tip strong{color:var(--green)}.rate-badge{display:inline-block;background:var(--yellow-lt);border:1px solid rgba(242,208,36,.5);border-radius:6px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--ink2);margin-top:12px}
+footer{background:var(--green);text-align:center;padding:1.5rem 1rem 2rem;font-size:12px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.04em}
+footer strong{color:rgba(255,255,255,.85)}
+@media(max-width:600px){.hero{padding:2rem 1.25rem 0}.hero-stats{flex-wrap:wrap}.hero-stat{min-width:50%;border-bottom:1px solid rgba(255,255,255,.1)}.main{padding:1.25rem 1rem 3rem}.filter-divider{display:none}.match-grid{grid-template-columns:1fr}.trip-row{grid-template-columns:70px 70px 1fr}.tr-badge{display:none}.nav-tab{padding:11px 10px;font-size:12px}.hotels-grid{grid-template-columns:1fr}.players-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.calc-row{grid-template-columns:1fr auto 1fr}}
 </style>
 </head>
 <body>
-
-<!-- ── HERO ── -->
 <header class="hero">
-  <div class="hero-blob1"></div>
-  <div class="hero-blob2"></div>
-  <div class="hero-blob3"></div>
+  <div class="hero-blob1"></div><div class="hero-blob2"></div><div class="hero-blob3"></div>
   <div class="hero-inner">
-    <span class="hero-badge">⚽ FIFA World Cup 2026 · New York-tid ET</span>
-    <h1 class="hero-title">
-      VM<br>
-      <span class="accent">2026</span><br>
-      <span class="outline">Kampprogram</span>
-    </h1>
-    <p class="hero-sub">Gruppespill · 20–27 juni · Alle tider i Eastern Time (ET)</p>
+    <span class="hero-badge">&#x1F1F3;&#x1F1F4; VM-tur 2026 &middot; New York &amp; Boston</span>
+    <h1 class="hero-title">VM<br><span class="accent">2026</span><br><span class="outline">Norgestur</span></h1>
+    <p class="hero-sub">19&ndash;27 juni &middot; New York &amp; Boston &middot; New York-tid (ET)</p>
     <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-num">40</span>
-        <span class="hero-stat-label">kamper</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">8</span>
-        <span class="hero-stat-label">dager</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">12</span>
-        <span class="hero-stat-label">grupper</span>
-      </div>
-      <div class="hero-stat norge">
-        <span class="hero-stat-num">2</span>
-        <span class="hero-stat-label">🇳🇴 Norge</span>
-      </div>
+      <div class="hero-stat"><span class="hero-stat-num">9</span><span class="hero-stat-label">dager</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">2</span><span class="hero-stat-label">byer</span></div>
+      <div class="hero-stat norge"><span class="hero-stat-num">2</span><span class="hero-stat-label">&#x1F1F3;&#x1F1F4; kamper</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">40</span><span class="hero-stat-label">VM-kamper</span></div>
     </div>
   </div>
 </header>
-
-<!-- ── NAV ── -->
-<nav class="nav-wrap" aria-label="Sidenavigasjon">
+<nav class="nav-wrap">
   <div class="nav-tabs">
-    <button class="nav-tab active" data-tab="kampprogram">⚽ Kampprogram</button>
-    <button class="nav-tab" data-tab="turprogram">🗺 Turprogram</button>
+    <button class="nav-tab active" data-tab="turprogram">&#x1F5FA; Turprogram</button>
+    <button class="nav-tab" data-tab="kampprogram">&#x26BD; Kampprogram</button>
+    <button class="nav-tab" data-tab="hotell">&#x1F3E8; Overnatting</button>
+    <button class="nav-tab" data-tab="tropp">&#x1F1F3;&#x1F1F4; VM-tropp</button>
+    <button class="nav-tab" data-tab="valuta">&#x1F4B1; Valuta</button>
   </div>
 </nav>
-
-<!-- ── MAIN ── -->
 <main class="main">
 
-<!-- TAB: KAMPPROGRAM -->
-<div class="tab-content active" id="tab-kampprogram">
+<div class="tab-content active" id="tab-turprogram">
+  <div class="trip-section">
+    <div class="trip-city-header"><div class="trip-city-dot"></div><span class="trip-city-name">New York</span><span class="trip-city-dates">19&ndash;23 juni</span></div>
+    <div class="trip-timeline">
+      <div class="trip-row reise"><span class="tr-date">Fre 19.06</span><span class="tr-time">19:10</span><div class="tr-detail">Ankomst New York JFK<small>Innsjekk hotell NY &middot; Ansvarlig: Philip</small></div><span class="tr-badge badge-reise">Ankomst</span></div>
+      <div class="trip-row"><span class="tr-date">L&oslash;r 20.06</span><span class="tr-time muted">&ndash;</span><div class="tr-detail">Fri dag i New York</div><span class="tr-badge badge-fri">Fri dag</span></div>
+      <div class="trip-row sosialt"><span class="tr-date">S&oslash;n 21.06</span><span class="tr-time">16:00</span><div class="tr-detail">B&aring;ttur med Svabba<small>Ansvarlig: Jonas</small></div><span class="tr-badge badge-sosialt">Supportertreff</span></div>
+      <div class="trip-row sosialt"><span class="tr-date">Man 22.06</span><span class="tr-time">13:00</span><div class="tr-detail">Oppladning &ndash; Meadowlands &laquo;The Backyard&raquo;<small>Minibuss t/r stadion &middot; Ansvarlig: Jonas / Rune Fossberg</small></div><span class="tr-badge badge-sosialt">Supportertreff</span></div>
+      <div class="trip-row kampdag"><span class="tr-date">Man 22.06</span><span class="tr-time">20:00</span><div class="tr-detail">&#x1F1F3;&#x1F1F4; Norge vs. Senegal<small>MetLife Stadium, New Jersey &middot; ET</small></div><span class="tr-badge badge-kamp">Kamp</span></div>
+      <div class="trip-row"><span class="tr-date">Tir 23.06</span><span class="tr-time muted">&ndash;</span><div class="tr-detail">Fri dag</div><span class="tr-badge badge-fri">Fri dag</span></div>
+    </div>
+  </div>
+  <div class="trip-section">
+    <div class="trip-city-header boston"><div class="trip-city-dot"></div><span class="trip-city-name">Boston</span><span class="trip-city-dates">24&ndash;27 juni</span></div>
+    <div class="trip-timeline">
+      <div class="trip-row reise"><span class="tr-date">Ons 24.06</span><span class="tr-time muted">Tog</span><div class="tr-detail">Avreise til Boston &ndash; tog<small>Innsjekk The Godfrey Hotel &middot; Ansvarlig: Philip / Jonas</small></div><span class="tr-badge badge-reise">Reisedag</span></div>
+      <div class="trip-row sosialt"><span class="tr-date">Tor 25.06</span><span class="tr-time">18:00</span><div class="tr-detail">Supportertreff &ndash; Roadrunner, Boston<small>DJ, quiz, Bausa m.fl. &middot; Ansvarlig: Rune St&oslash;rset</small></div><span class="tr-badge badge-sosialt">Supportertreff</span></div>
+      <div class="trip-row kampdag"><span class="tr-date">Fre 26.06</span><span class="tr-time">09:30</span><div class="tr-detail">Tog fra South Station &ndash; boarding gruppe B<small>Ansvarlig: Jonas og St&oslash;rset &middot; Jonas: 3 billetter, Rune St&oslash;rset: 2 billetter</small></div><span class="tr-badge badge-reise">Transport</span></div>
+      <div class="trip-row kampdag"><span class="tr-date">Fre 26.06</span><span class="tr-time">15:00</span><div class="tr-detail">&#x1F1F3;&#x1F1F4; Norge vs. Frankrike<small>Gillette Stadium, Foxborough &middot; ET</small></div><span class="tr-badge badge-kamp">Kamp</span></div>
+      <div class="trip-row reise"><span class="tr-date">L&oslash;r 27.06</span><span class="tr-time">18:55</span><div class="tr-detail">Check-out og avreise<small>Fly hjem</small></div><span class="tr-badge badge-reise">Hjemreise</span></div>
+    </div>
+  </div>
+</div>
 
+<div class="tab-content" id="tab-kampprogram">
   <div class="filter-bar">
     <span class="filter-label">Dag</span>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;">
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
       <button class="pill active" data-type="day" data-val="all">Alle</button>
       <button class="pill" data-type="day" data-val="20">20/6</button>
       <button class="pill" data-type="day" data-val="21">21/6</button>
@@ -559,264 +192,221 @@ footer strong { color: rgba(255,255,255,0.85); }
       <button class="pill" data-type="day" data-val="27">27/6</button>
     </div>
     <div class="filter-divider"></div>
-    <div style="display:flex;gap:6px;">
+    <div style="display:flex;gap:6px">
       <button class="pill active" data-type="focus" data-val="all">Alle lag</button>
-      <button class="pill norge-pill" data-type="focus" data-val="norge">🇳🇴 Kun Norge</button>
+      <button class="pill norge-pill" data-type="focus" data-val="norge">&#x1F1F3;&#x1F1F4; Kun Norge</button>
     </div>
   </div>
-
-  <div class="shown-bar">
-    Viser <strong id="s-shown">40</strong> av <strong>40</strong> kamper
-  </div>
-
+  <div class="shown-bar">Viser <strong id="s-shown">40</strong> av <strong>40</strong> kamper</div>
   <div id="schedule"></div>
-
 </div>
 
-<!-- TAB: TURPROGRAM -->
-<div class="tab-content" id="tab-turprogram">
-
-  <div class="trip-section">
-    <div class="trip-city-header">
-      <div class="trip-city-dot"></div>
-      <span class="trip-city-name">New York</span>
-      <span class="trip-city-dates">19–23 juni</span>
+<div class="tab-content" id="tab-hotell">
+  <div class="section-intro"><h2>Overnattingssteder</h2><p>To hoteller &ndash; ett i hvert hjerte av New York og Boston</p></div>
+  <div class="hotels-grid">
+    <div class="hotel-card">
+      <div class="hotel-card-header">
+        <span class="hotel-city-tag">New York &middot; 19&ndash;24 juni</span>
+        <div class="hotel-name">The Bayard Hotel</div>
+        <div class="hotel-address">&#x1F4CD; 145 East 49th Street, Midtown Manhattan, NY 10017</div>
+      </div>
+      <div class="hotel-body">
+        <p class="hotel-desc">Et sjeldent boutique-hotell i Turtle Bay, Midtown Manhattan &ndash; bare minutters gange fra Grand Central Terminal. The Bayard tilbyr 35 romslige leilighetssuiter rundt en privat hage. Med frokost inkludert og en varm, personlig service er dette stedet &aring; pakke ut og f&oslash;le seg hjemme i verdens travleste by.</p>
+        <div class="hotel-facts">
+          <span class="hotel-fact">&#x2713; Frokost inkludert</span>
+          <span class="hotel-fact">&#x2713; Gratis Wi-Fi</span>
+          <span class="hotel-fact">&#x2713; 6 min til Grand Central</span>
+          <span class="hotel-fact">&#x2713; Leilighetssuiter</span>
+          <span class="hotel-fact">&#x2713; Privat hage</span>
+        </div>
+        <a class="hotel-map-btn" href="https://maps.google.com/?q=145+East+49th+Street+New+York+NY" target="_blank">&#x1F4CD; &Aring;pne i Google Maps</a>
+        <div class="hotel-dates">&#x1F4C5; Innsjekk fre 19. juni &middot; Utsjekk ons 24. juni</div>
+      </div>
     </div>
-    <div class="trip-timeline">
-      <div class="trip-row reise">
-        <span class="tr-date">Fre 19.06</span>
-        <span class="tr-time">19:10</span>
-        <div class="tr-detail">Ankomst New York JFK
-          <small>Innsjekk hotell NY · Ansvarlig: Philip</small>
+    <div class="hotel-card">
+      <div class="hotel-card-header">
+        <span class="hotel-city-tag boston">Boston &middot; 24&ndash;27 juni</span>
+        <div class="hotel-name">The Godfrey Hotel</div>
+        <div class="hotel-address">&#x1F4CD; 505 Washington Street, Downtown Crossing, Boston, MA 02111</div>
+      </div>
+      <div class="hotel-body">
+        <p class="hotel-desc">Et prisbelønnet designhotell midt i Bostons Downtown Crossing, k&aring;ret til et av Travel+Leisure's &laquo;Coolest new urban hotels&raquo;. Med 242 velinnredede rom, George Howell Coffee i lobbyen og RUKA Restobar, er The Godfrey selve energien i Boston. Boston Common er 3 minutters gange unna.</p>
+        <div class="hotel-facts">
+          <span class="hotel-fact">&#x2713; Gratis Wi-Fi</span>
+          <span class="hotel-fact">&#x2713; Kafe i lobbyen</span>
+          <span class="hotel-fact">&#x2713; Restaurant &amp; bar</span>
+          <span class="hotel-fact">&#x2713; 3 min til Boston Common</span>
+          <span class="hotel-fact">&#x2713; Gratis sykkelutleie</span>
         </div>
-        <span class="tr-badge badge-reise">Ankomst</span>
-      </div>
-      <div class="trip-row">
-        <span class="tr-date">Lør 20.06</span>
-        <span class="tr-time muted">–</span>
-        <div class="tr-detail">Fri dag i New York</div>
-        <span class="tr-badge badge-fri">Fri dag</span>
-      </div>
-      <div class="trip-row sosialt">
-        <span class="tr-date">Søn 21.06</span>
-        <span class="tr-time">16:00</span>
-        <div class="tr-detail">Båttur med Svabba
-          <small>Ansvarlig: Jonas</small>
-        </div>
-        <span class="tr-badge badge-sosialt">Supportertreff</span>
-      </div>
-      <div class="trip-row sosialt">
-        <span class="tr-date">Man 22.06</span>
-        <span class="tr-time">13:00</span>
-        <div class="tr-detail">Oppladning – Meadowlands «The Backyard»
-          <small>Minibuss t/r stadion · Ansvarlig: Jonas / Rune Fossberg</small>
-        </div>
-        <span class="tr-badge badge-sosialt">Supportertreff</span>
-      </div>
-      <div class="trip-row kampdag">
-        <span class="tr-date">Man 22.06</span>
-        <span class="tr-time">20:00</span>
-        <div class="tr-detail">🇳🇴 Norge vs. Senegal
-          <small>MetLife Stadium, New Jersey</small>
-        </div>
-        <span class="tr-badge badge-kamp">Kamp</span>
-      </div>
-      <div class="trip-row">
-        <span class="tr-date">Tir 23.06</span>
-        <span class="tr-time muted">–</span>
-        <div class="tr-detail">Fri dag</div>
-        <span class="tr-badge badge-fri">Fri dag</span>
+        <a class="hotel-map-btn" href="https://maps.google.com/?q=505+Washington+Street+Boston+MA" target="_blank">&#x1F4CD; &Aring;pne i Google Maps</a>
+        <div class="hotel-dates">&#x1F4C5; Innsjekk ons 24. juni &middot; Utsjekk l&oslash;r 27. juni</div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="trip-section">
-    <div class="trip-city-header boston">
-      <div class="trip-city-dot"></div>
-      <span class="trip-city-name">Boston</span>
-      <span class="trip-city-dates">24–27 juni</span>
-    </div>
-    <div class="trip-timeline">
-      <div class="trip-row reise">
-        <span class="tr-date">Ons 24.06</span>
-        <span class="tr-time muted">Tog</span>
-        <div class="tr-detail">Avreise til Boston – tog
-          <small>Innsjekk The Godfrey Hotel · Ansvarlig: Philip / Jonas</small>
-        </div>
-        <span class="tr-badge badge-reise">Reisedag</span>
-      </div>
-      <div class="trip-row sosialt">
-        <span class="tr-date">Tor 25.06</span>
-        <span class="tr-time">18:00</span>
-        <div class="tr-detail">Supportertreff – Roadrunner, Boston
-          <small>DJ, quiz, Bausa m.fl. · Ansvarlig: Rune Størset</small>
-        </div>
-        <span class="tr-badge badge-sosialt">Supportertreff</span>
-      </div>
-      <div class="trip-row kampdag">
-        <span class="tr-date">Fre 26.06</span>
-        <span class="tr-time">09:30</span>
-        <div class="tr-detail">Tog fra South Station – boarding gruppe B
-          <small>Ansvarlig: Jonas og Størset · Jonas: 3 billetter, Rune Størset: 2 billetter</small>
-        </div>
-        <span class="tr-badge badge-reise">Transport</span>
-      </div>
-      <div class="trip-row kampdag">
-        <span class="tr-date">Fre 26.06</span>
-        <span class="tr-time">15:00</span>
-        <div class="tr-detail">🇳🇴 Norge vs. Frankrike
-          <small>Gillette Stadium, Foxborough</small>
-        </div>
-        <span class="tr-badge badge-kamp">Kamp</span>
-      </div>
-      <div class="trip-row reise">
-        <span class="tr-date">Lør 27.06</span>
-        <span class="tr-time">18:55</span>
-        <div class="tr-detail">Check-out og avreise
-          <small>Fly hjem</small>
-        </div>
-        <span class="tr-badge badge-reise">Hjemreise</span>
-      </div>
+<div class="tab-content" id="tab-tropp">
+  <div class="section-intro"><h2>Norges VM-tropp 2026</h2><p>26 spillere &middot; Uttatt 21. mai 2026 &middot; Trener: St&aring;le Solbakken</p></div>
+  <div class="pos-section">
+    <div class="pos-header"><span class="pos-tag mk">Keepere</span><span class="pos-count">3 spillere</span></div>
+    <div class="players-grid">
+      <div class="player-card"><div class="player-name">&Oslash;rjan Nyland</div><div class="player-club">Sevilla</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">35</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">69</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Sander Tangvik</div><div class="player-club">Hamburger SV</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">23</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Egil Selvik</div><div class="player-club">Watford</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">28</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">6</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
     </div>
   </div>
+  <div class="pos-section">
+    <div class="pos-header"><span class="pos-tag fb">Forsvarsspillere</span><span class="pos-count">8 spillere</span></div>
+    <div class="players-grid">
+      <div class="player-card"><div class="player-name">Kristoffer Ajer</div><div class="player-club">Brentford</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">28</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">50</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">2</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Leo &Oslash;stig&aring;rd</div><div class="player-club">Genoa</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">26</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">36</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">David M. Wolfe</div><div class="player-club">Wolverhampton</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">24</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">20</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Fredrik A. Bj&oslash;rkan</div><div class="player-club">Bod&oslash;/Glimt</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">27</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">19</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">M. H. Pedersen</div><div class="player-club">Torino</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">25</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">31</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Torbj&oslash;rn Heggem</div><div class="player-club">Bologna</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">27</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">13</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Sondre Lang&aring;s</div><div class="player-club">Derby County</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">25</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">2</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Henrik Falchener</div><div class="player-club">Viking</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">23</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+    </div>
+  </div>
+  <div class="pos-section">
+    <div class="pos-header"><span class="pos-tag mb">Midtbanespillere</span><span class="pos-count">10 spillere</span></div>
+    <div class="players-grid">
+      <div class="player-card star"><div class="player-name">Martin &Oslash;degaard <span class="captain-badge">Kaptein</span></div><div class="player-club">Arsenal</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">27</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">67</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">4</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Sander Berge</div><div class="player-club">Fulham</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">28</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">64</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Patrick Berg</div><div class="player-club">Bod&oslash;/Glimt</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">28</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">41</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">K. Thorstvedt</div><div class="player-club">Sassuolo</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">27</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">35</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">4</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Morten Thorsby</div><div class="player-club">Cremonese</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">30</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">30</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">&ndash;</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Fredrik Aursnes</div><div class="player-club">Benfica</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">30</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">20</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Thelo Aasgaard</div><div class="player-club">Rangers</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">24</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">6</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">5</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">A. Schjelderup</div><div class="player-club">Benfica</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">22</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">10</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Oscar Bobb</div><div class="player-club">Fulham</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">22</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">18</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">2</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Jens P. Hauge</div><div class="player-club">Bod&oslash;/Glimt</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">26</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">14</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+    </div>
+  </div>
+  <div class="pos-section">
+    <div class="pos-header"><span class="pos-tag an">Angripere</span><span class="pos-count">5 spillere</span></div>
+    <div class="players-grid">
+      <div class="player-card star"><div class="player-name">Erling Haaland</div><div class="player-club">Manchester City</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">25</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">49</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">55</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Alexander S&oslash;rloth</div><div class="player-club">Atl&eacute;tico Madrid</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">30</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">70</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">26</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">J. Strand Larsen</div><div class="player-club">Crystal Palace</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">26</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">26</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">4</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Antonio Nusa</div><div class="player-club">RB Leipzig</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">21</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">22</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">7</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+      <div class="player-card"><div class="player-name">Julian Ryerson</div><div class="player-club">Borussia Dortmund</div><div class="player-stats"><div class="player-stat"><span class="player-stat-num">28</span><span class="player-stat-label">Alder</span></div><div class="player-stat"><span class="player-stat-num">41</span><span class="player-stat-label">Kamper</span></div><div class="player-stat"><span class="player-stat-num">1</span><span class="player-stat-label">M&aring;l</span></div></div></div>
+    </div>
+  </div>
+</div>
 
-</div><!-- end turprogram -->
+<div class="tab-content" id="tab-valuta">
+  <div class="calc-wrap">
+    <div class="calc-card">
+      <div class="calc-title">Valutakalkulator</div>
+      <div class="calc-row">
+        <div class="calc-field"><label>&#x1F1FA;&#x1F1F8; USD &ndash; Amerikanske dollar</label><input type="number" id="usd-input" value="100" min="0" step="1" inputmode="decimal"></div>
+        <button class="calc-swap" id="swap-btn" title="Bytt">&#x21C4;</button>
+        <div class="calc-field"><label>&#x1F1F3;&#x1F1F4; NOK &ndash; Norske kroner</label><input type="number" id="nok-input" value="" min="0" step="1" inputmode="decimal" placeholder="&ndash;"></div>
+      </div>
+      <div class="rate-info">Kurs: <strong>1 USD = <span id="rate-display">10.50</span> NOK</strong></div>
+      <div class="rate-badge" id="rate-badge">Henter kurs...</div>
+      <div class="quick-btns">
+        <span style="font-size:11px;color:var(--ink3);font-weight:600;text-transform:uppercase;letter-spacing:.08em;align-self:center">Hurtig USD:</span>
+        <button class="quick-btn" data-usd="10">$10</button>
+        <button class="quick-btn" data-usd="20">$20</button>
+        <button class="quick-btn" data-usd="50">$50</button>
+        <button class="quick-btn" data-usd="100">$100</button>
+        <button class="quick-btn" data-usd="200">$200</button>
+        <button class="quick-btn" data-usd="500">$500</button>
+      </div>
+    </div>
+    <div class="calc-tip"><strong>Tips for turen:</strong><br>Dropp vekslingskontorer p&aring; flyplassen. Bruk heller bankkort med lav valutakurs eller ta ut i lokal minibank. Ha litt kontanter til tips og taxi. Standard tips er 18&ndash;20% p&aring; restaurant.</div>
+  </div>
+</div>
 
 </main>
-
-<footer>
-  <strong>VM 2026</strong> · Kampprogram 20–27 juni · Alle tider i New York (ET)
-</footer>
-
+<footer><strong>VM 2026 &middot; Norgestur</strong> &middot; New York &amp; Boston &middot; 19&ndash;27 juni</footer>
 <script>
-const MATCHES = [
-  {day:"20",dname:"Lørdag 20. juni",time:"13:00",grp:"F",home:"Nederland",away:"Sverige",venue:"NRG Stadium, Houston",norge:false},
-  {day:"20",dname:"Lørdag 20. juni",time:"16:00",grp:"E",home:"Tyskland",away:"Elfenbenskysten",venue:"BMO Field, Toronto",norge:false},
-  {day:"20",dname:"Lørdag 20. juni",time:"20:00",grp:"E",home:"Ecuador",away:"Curaçao",venue:"Arrowhead Stadium, Kansas City",norge:false},
-  {day:"21",dname:"Søndag 21. juni",time:"00:00",grp:"F",home:"Tunisia",away:"Japan",venue:"Estadio BBVA, Monterrey",norge:false},
-  {day:"21",dname:"Søndag 21. juni",time:"12:00",grp:"H",home:"Spania",away:"Saudi-Arabia",venue:"Mercedes-Benz Stadium, Atlanta",norge:false},
-  {day:"21",dname:"Søndag 21. juni",time:"15:00",grp:"G",home:"Belgia",away:"Iran",venue:"SoFi Stadium, Inglewood",norge:false},
-  {day:"21",dname:"Søndag 21. juni",time:"18:00",grp:"H",home:"Uruguay",away:"Kapp Verde",venue:"Hard Rock Stadium, Miami Gardens",norge:false},
-  {day:"21",dname:"Søndag 21. juni",time:"21:00",grp:"G",home:"New Zealand",away:"Egypt",venue:"BC Place, Vancouver",norge:false},
-  {day:"22",dname:"Mandag 22. juni",time:"13:00",grp:"J",home:"Argentina",away:"Østerrike",venue:"AT&T Stadium, Arlington",norge:false},
-  {day:"22",dname:"Mandag 22. juni",time:"17:00",grp:"I",home:"Frankrike",away:"Irak",venue:"Lincoln Financial Field, Philadelphia",norge:false},
-  {day:"22",dname:"Mandag 22. juni",time:"20:00",grp:"I",home:"Norge",away:"Senegal",venue:"MetLife Stadium, East Rutherford",norge:true},
-  {day:"22",dname:"Mandag 22. juni",time:"23:00",grp:"J",home:"Jordan",away:"Algerie",venue:"Levi's Stadium, Santa Clara",norge:false},
-  {day:"23",dname:"Tirsdag 23. juni",time:"13:00",grp:"K",home:"Portugal",away:"Usbekistan",venue:"NRG Stadium, Houston",norge:false},
-  {day:"23",dname:"Tirsdag 23. juni",time:"16:00",grp:"L",home:"England",away:"Ghana",venue:"AT&T Stadium, Arlington",norge:false},
-  {day:"23",dname:"Tirsdag 23. juni",time:"19:00",grp:"L",home:"Panama",away:"Kroatia",venue:"Lincoln Financial Field, Philadelphia",norge:false},
-  {day:"23",dname:"Tirsdag 23. juni",time:"22:00",grp:"K",home:"Colombia",away:"DR Kongo",venue:"Estadio Akron, Guadalajara",norge:false},
-  {day:"24",dname:"Onsdag 24. juni",time:"15:00",grp:"B",home:"Sveits",away:"Canada",venue:"SoFi Stadium, Inglewood",norge:false},
-  {day:"24",dname:"Onsdag 24. juni",time:"15:00",grp:"B",home:"Bosnia-Herz.",away:"Qatar",venue:"Gillette Stadium, Foxborough",norge:false},
-  {day:"24",dname:"Onsdag 24. juni",time:"18:00",grp:"C",home:"Skottland",away:"Brasil",venue:"Lumen Field, Seattle",norge:false},
-  {day:"24",dname:"Onsdag 24. juni",time:"18:00",grp:"C",home:"Marokko",away:"Haiti",venue:"Mercedes-Benz Stadium, Atlanta",norge:false},
-  {day:"24",dname:"Onsdag 24. juni",time:"21:00",grp:"A",home:"Tsjekkia",away:"Mexico",venue:"Estadio Azteca, Mexico City",norge:false},
-  {day:"24",dname:"Onsdag 24. juni",time:"21:00",grp:"A",home:"Sør-Afrika",away:"Sør-Korea",venue:"Estadio Akron, Zapopan",norge:false},
-  {day:"25",dname:"Torsdag 25. juni",time:"16:00",grp:"E",home:"Ecuador",away:"Tyskland",venue:"MetLife Stadium, East Rutherford",norge:false},
-  {day:"25",dname:"Torsdag 25. juni",time:"16:00",grp:"E",home:"Curaçao",away:"Elfenbenskysten",venue:"Lincoln Financial Field, Philadelphia",norge:false},
-  {day:"25",dname:"Torsdag 25. juni",time:"19:00",grp:"F",home:"Japan",away:"Sverige",venue:"AT&T Stadium, Arlington",norge:false},
-  {day:"25",dname:"Torsdag 25. juni",time:"19:00",grp:"F",home:"Tunisia",away:"Nederland",venue:"Arrowhead Stadium, Kansas City",norge:false},
-  {day:"25",dname:"Torsdag 25. juni",time:"22:00",grp:"D",home:"Tyrkia",away:"USA",venue:"SoFi Stadium, Inglewood",norge:false},
-  {day:"25",dname:"Torsdag 25. juni",time:"22:00",grp:"D",home:"Paraguay",away:"Australia",venue:"Levi's Stadium, Santa Clara",norge:false},
-  {day:"26",dname:"Fredag 26. juni",time:"15:00",grp:"I",home:"Norge",away:"Frankrike",venue:"Gillette Stadium, Foxborough",norge:true},
-  {day:"26",dname:"Fredag 26. juni",time:"15:00",grp:"I",home:"Senegal",away:"Irak",venue:"BMO Field, Toronto",norge:false},
-  {day:"26",dname:"Fredag 26. juni",time:"20:00",grp:"H",home:"Kapp Verde",away:"Saudi-Arabia",venue:"NRG Stadium, Houston",norge:false},
-  {day:"26",dname:"Fredag 26. juni",time:"20:00",grp:"H",home:"Uruguay",away:"Spania",venue:"Estadio Akron, Zapopan",norge:false},
-  {day:"26",dname:"Fredag 26. juni",time:"23:00",grp:"G",home:"Egypt",away:"Iran",venue:"Lumen Field, Seattle",norge:false},
-  {day:"26",dname:"Fredag 26. juni",time:"23:00",grp:"G",home:"New Zealand",away:"Belgia",venue:"BC Place, Vancouver",norge:false},
-  {day:"27",dname:"Lørdag 27. juni",time:"17:00",grp:"L",home:"Panama",away:"England",venue:"MetLife Stadium, East Rutherford",norge:false},
-  {day:"27",dname:"Lørdag 27. juni",time:"17:00",grp:"L",home:"Kroatia",away:"Ghana",venue:"Lincoln Financial Field, Philadelphia",norge:false},
-  {day:"27",dname:"Lørdag 27. juni",time:"19:30",grp:"K",home:"Colombia",away:"Portugal",venue:"Hard Rock Stadium, Miami Gardens",norge:false},
-  {day:"27",dname:"Lørdag 27. juni",time:"19:30",grp:"K",home:"DR Kongo",away:"Usbekistan",venue:"Mercedes-Benz Stadium, Atlanta",norge:false},
-  {day:"27",dname:"Lørdag 27. juni",time:"22:00",grp:"J",home:"Algerie",away:"Østerrike",venue:"Arrowhead Stadium, Kansas City",norge:false},
-  {day:"27",dname:"Lørdag 27. juni",time:"22:00",grp:"J",home:"Jordan",away:"Argentina",venue:"AT&T Stadium, Arlington",norge:false},
+const M=[
+  {d:"20",dn:"Lordag 20. juni",t:"13:00",g:"F",h:"Nederland",a:"Sverige",v:"NRG Stadium, Houston",n:false},
+  {d:"20",dn:"Lordag 20. juni",t:"16:00",g:"E",h:"Tyskland",a:"Elfenbenskysten",v:"BMO Field, Toronto",n:false},
+  {d:"20",dn:"Lordag 20. juni",t:"20:00",g:"E",h:"Ecuador",a:"Curacoa",v:"Arrowhead Stadium, Kansas City",n:false},
+  {d:"21",dn:"Sondag 21. juni",t:"00:00",g:"F",h:"Tunisia",a:"Japan",v:"Estadio BBVA, Monterrey",n:false},
+  {d:"21",dn:"Sondag 21. juni",t:"12:00",g:"H",h:"Spania",a:"Saudi-Arabia",v:"Mercedes-Benz Stadium, Atlanta",n:false},
+  {d:"21",dn:"Sondag 21. juni",t:"15:00",g:"G",h:"Belgia",a:"Iran",v:"SoFi Stadium, Inglewood",n:false},
+  {d:"21",dn:"Sondag 21. juni",t:"18:00",g:"H",h:"Uruguay",a:"Kapp Verde",v:"Hard Rock Stadium, Miami Gardens",n:false},
+  {d:"21",dn:"Sondag 21. juni",t:"21:00",g:"G",h:"New Zealand",a:"Egypt",v:"BC Place, Vancouver",n:false},
+  {d:"22",dn:"Mandag 22. juni",t:"13:00",g:"J",h:"Argentina",a:"Osterrike",v:"AT&T Stadium, Arlington",n:false},
+  {d:"22",dn:"Mandag 22. juni",t:"17:00",g:"I",h:"Frankrike",a:"Irak",v:"Lincoln Financial Field, Philadelphia",n:false},
+  {d:"22",dn:"Mandag 22. juni",t:"20:00",g:"I",h:"Norge",a:"Senegal",v:"MetLife Stadium, East Rutherford",n:true},
+  {d:"22",dn:"Mandag 22. juni",t:"23:00",g:"J",h:"Jordan",a:"Algerie",v:"Levi's Stadium, Santa Clara",n:false},
+  {d:"23",dn:"Tirsdag 23. juni",t:"13:00",g:"K",h:"Portugal",a:"Usbekistan",v:"NRG Stadium, Houston",n:false},
+  {d:"23",dn:"Tirsdag 23. juni",t:"16:00",g:"L",h:"England",a:"Ghana",v:"AT&T Stadium, Arlington",n:false},
+  {d:"23",dn:"Tirsdag 23. juni",t:"19:00",g:"L",h:"Panama",a:"Kroatia",v:"Lincoln Financial Field, Philadelphia",n:false},
+  {d:"23",dn:"Tirsdag 23. juni",t:"22:00",g:"K",h:"Colombia",a:"DR Kongo",v:"Estadio Akron, Guadalajara",n:false},
+  {d:"24",dn:"Onsdag 24. juni",t:"15:00",g:"B",h:"Sveits",a:"Canada",v:"SoFi Stadium, Inglewood",n:false},
+  {d:"24",dn:"Onsdag 24. juni",t:"15:00",g:"B",h:"Bosnia-Herz.",a:"Qatar",v:"Gillette Stadium, Foxborough",n:false},
+  {d:"24",dn:"Onsdag 24. juni",t:"18:00",g:"C",h:"Skottland",a:"Brasil",v:"Lumen Field, Seattle",n:false},
+  {d:"24",dn:"Onsdag 24. juni",t:"18:00",g:"C",h:"Marokko",a:"Haiti",v:"Mercedes-Benz Stadium, Atlanta",n:false},
+  {d:"24",dn:"Onsdag 24. juni",t:"21:00",g:"A",h:"Tsjekkia",a:"Mexico",v:"Estadio Azteca, Mexico City",n:false},
+  {d:"24",dn:"Onsdag 24. juni",t:"21:00",g:"A",h:"Sor-Afrika",a:"Sor-Korea",v:"Estadio Akron, Zapopan",n:false},
+  {d:"25",dn:"Torsdag 25. juni",t:"16:00",g:"E",h:"Ecuador",a:"Tyskland",v:"MetLife Stadium, East Rutherford",n:false},
+  {d:"25",dn:"Torsdag 25. juni",t:"16:00",g:"E",h:"Curacoa",a:"Elfenbenskysten",v:"Lincoln Financial Field, Philadelphia",n:false},
+  {d:"25",dn:"Torsdag 25. juni",t:"19:00",g:"F",h:"Japan",a:"Sverige",v:"AT&T Stadium, Arlington",n:false},
+  {d:"25",dn:"Torsdag 25. juni",t:"19:00",g:"F",h:"Tunisia",a:"Nederland",v:"Arrowhead Stadium, Kansas City",n:false},
+  {d:"25",dn:"Torsdag 25. juni",t:"22:00",g:"D",h:"Tyrkia",a:"USA",v:"SoFi Stadium, Inglewood",n:false},
+  {d:"25",dn:"Torsdag 25. juni",t:"22:00",g:"D",h:"Paraguay",a:"Australia",v:"Levi's Stadium, Santa Clara",n:false},
+  {d:"26",dn:"Fredag 26. juni",t:"15:00",g:"I",h:"Norge",a:"Frankrike",v:"Gillette Stadium, Foxborough",n:true},
+  {d:"26",dn:"Fredag 26. juni",t:"15:00",g:"I",h:"Senegal",a:"Irak",v:"BMO Field, Toronto",n:false},
+  {d:"26",dn:"Fredag 26. juni",t:"20:00",g:"H",h:"Kapp Verde",a:"Saudi-Arabia",v:"NRG Stadium, Houston",n:false},
+  {d:"26",dn:"Fredag 26. juni",t:"20:00",g:"H",h:"Uruguay",a:"Spania",v:"Estadio Akron, Zapopan",n:false},
+  {d:"26",dn:"Fredag 26. juni",t:"23:00",g:"G",h:"Egypt",a:"Iran",v:"Lumen Field, Seattle",n:false},
+  {d:"26",dn:"Fredag 26. juni",t:"23:00",g:"G",h:"New Zealand",a:"Belgia",v:"BC Place, Vancouver",n:false},
+  {d:"27",dn:"Lordag 27. juni",t:"17:00",g:"L",h:"Panama",a:"England",v:"MetLife Stadium, East Rutherford",n:false},
+  {d:"27",dn:"Lordag 27. juni",t:"17:00",g:"L",h:"Kroatia",a:"Ghana",v:"Lincoln Financial Field, Philadelphia",n:false},
+  {d:"27",dn:"Lordag 27. juni",t:"19:30",g:"K",h:"Colombia",a:"Portugal",v:"Hard Rock Stadium, Miami Gardens",n:false},
+  {d:"27",dn:"Lordag 27. juni",t:"19:30",g:"K",h:"DR Kongo",a:"Usbekistan",v:"Mercedes-Benz Stadium, Atlanta",n:false},
+  {d:"27",dn:"Lordag 27. juni",t:"22:00",g:"J",h:"Algerie",a:"Osterrike",v:"Arrowhead Stadium, Kansas City",n:false},
+  {d:"27",dn:"Lordag 27. juni",t:"22:00",g:"J",h:"Jordan",a:"Argentina",v:"AT&T Stadium, Arlington",n:false}
 ];
-
-const KAMPDAGER = ["22","26"];
-let activeDay = "all";
-let activeFocus = "all";
-
-function render() {
-  const container = document.getElementById("schedule");
-  container.innerHTML = "";
-  const filtered = MATCHES.filter(m => {
-    if (activeDay !== "all" && m.day !== activeDay) return false;
-    if (activeFocus === "norge" && !m.norge) return false;
-    return true;
-  });
-  document.getElementById("s-shown").textContent = filtered.length;
-  if (filtered.length === 0) {
-    container.innerHTML = '<div class="no-results">Ingen kamper matcher valgt filter</div>';
-    return;
-  }
-  const days = [...new Set(filtered.map(m => m.day))];
-  days.forEach(day => {
-    const dayMatches = filtered.filter(m => m.day === day);
-    const dname = dayMatches[0].dname;
-    const parts = dname.split(" ");
-    const weekday = parts[0];
-    const dateStr = parts.slice(1).join(" ");
-    const isKampdag = KAMPDAGER.includes(day);
-
-    const sec = document.createElement("div");
-    sec.className = "day-section";
-    sec.innerHTML = `
-      <div class="day-header">
-        <span class="day-chip${isKampdag ? ' kampdag' : ''}">${isKampdag ? '🇳🇴 Kampdag' : weekday}</span>
-        <span class="day-date">${dateStr}</span>
-        <span class="day-count">${dayMatches.length} kamp${dayMatches.length > 1 ? 'er' : ''}</span>
-      </div>
-      <div class="match-grid" id="grid-${day}"></div>`;
-    container.appendChild(sec);
-
-    const grid = sec.querySelector(".match-grid");
-    dayMatches.forEach(m => {
-      const card = document.createElement("div");
-      card.className = "match-card" + (m.norge ? " norge" : "");
-      card.innerHTML = `
-        <div class="m-time">
-          <span class="m-time-str">${m.time}</span>
-          <span class="m-time-tz">ET</span>
-        </div>
-        <div>
-          <div class="m-teams">${m.home} <span class="m-vs">vs</span> ${m.away}</div>
-          <div class="m-venue">${m.venue}</div>
-        </div>
-        <div class="m-right">
-          <span class="m-group-badge">Gr. ${m.grp}</span>
-          ${m.norge ? '<span class="m-norway-badge">🇳🇴 Norge</span>' : ''}
-        </div>`;
-      grid.appendChild(card);
+const KD=["22","26"];
+let aD="all",aF="all";
+function render(){
+  const c=document.getElementById("schedule");c.innerHTML="";
+  const f=M.filter(m=>{if(aD!=="all"&&m.d!==aD)return false;if(aF==="norge"&&!m.n)return false;return true;});
+  document.getElementById("s-shown").textContent=f.length;
+  if(!f.length){c.innerHTML='<div class="no-results">Ingen kamper matcher valgt filter</div>';return;}
+  [...new Set(f.map(m=>m.d))].forEach(day=>{
+    const dm=f.filter(m=>m.d===day),dn=dm[0].dn,pts=dn.split(" "),w=pts[0],ds=pts.slice(1).join(" "),isK=KD.includes(day);
+    const s=document.createElement("div");s.className="day-section";
+    s.innerHTML='<div class="day-header"><span class="day-chip'+(isK?' kampdag':'')+'">'+( isK?'Kampdag':w)+'</span><span class="day-date">'+ds+'</span><span class="day-count">'+dm.length+' kamp'+(dm.length>1?'er':'')+'</span></div><div class="match-grid" id="g'+day+'"></div>';
+    c.appendChild(s);
+    const g=s.querySelector(".match-grid");
+    dm.forEach(m=>{
+      const card=document.createElement("div");card.className="match-card"+(m.n?" norge":"");
+      card.innerHTML='<div class="m-time"><span class="m-time-str">'+m.t+'</span><span class="m-time-tz">ET</span></div><div><div class="m-teams">'+m.h+' <span class="m-vs">vs</span> '+m.a+'</div><div class="m-venue">'+m.v+'</div></div><div class="m-right"><span class="m-group-badge">Gr. '+m.g+'</span>'+(m.n?'<span class="m-norway-badge">Norge</span>':'')+'</div>';
+      g.appendChild(card);
     });
   });
 }
-
-document.querySelectorAll(".pill[data-type='day']").forEach(p => {
-  p.addEventListener("click", () => {
-    document.querySelectorAll(".pill[data-type='day']").forEach(x => x.classList.remove("active"));
-    p.classList.add("active");
-    activeDay = p.dataset.val;
-    render();
-  });
-});
-document.querySelectorAll(".pill[data-type='focus']").forEach(p => {
-  p.addEventListener("click", () => {
-    document.querySelectorAll(".pill[data-type='focus']").forEach(x => x.classList.remove("active"));
-    p.classList.add("active");
-    activeFocus = p.dataset.val;
-    render();
-  });
-});
-document.querySelectorAll(".nav-tab").forEach(tab => {
-  tab.addEventListener("click", () => {
-    document.querySelectorAll(".nav-tab").forEach(t => t.classList.remove("active"));
-    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-    tab.classList.add("active");
-    document.getElementById("tab-" + tab.dataset.tab).classList.add("active");
-  });
-});
-
+document.querySelectorAll(".pill[data-type='day']").forEach(p=>p.addEventListener("click",()=>{document.querySelectorAll(".pill[data-type='day']").forEach(x=>x.classList.remove("active"));p.classList.add("active");aD=p.dataset.val;render();}));
+document.querySelectorAll(".pill[data-type='focus']").forEach(p=>p.addEventListener("click",()=>{document.querySelectorAll(".pill[data-type='focus']").forEach(x=>x.classList.remove("active"));p.classList.add("active");aF=p.dataset.val;render();}));
+document.querySelectorAll(".nav-tab").forEach(t=>t.addEventListener("click",()=>{document.querySelectorAll(".nav-tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".tab-content").forEach(x=>x.classList.remove("active"));t.classList.add("active");document.getElementById("tab-"+t.dataset.tab).classList.add("active");}));
 render();
+let rate=10.50,usdMode=true;
+async function fetchRate(){
+  try{
+    const r=await fetch("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json");
+    const d=await r.json();
+    if(d.usd&&d.usd.nok){rate=d.usd.nok;document.getElementById("rate-display").textContent=rate.toFixed(2);document.getElementById("rate-badge").textContent="Live-kurs: 1 USD = "+rate.toFixed(2)+" NOK";convert();}
+  }catch(e){document.getElementById("rate-badge").textContent="Standardkurs: 1 USD = "+rate.toFixed(2)+" NOK";}
+}
+function convert(){
+  const ui=document.getElementById("usd-input"),ni=document.getElementById("nok-input");
+  if(usdMode){const v=parseFloat(ui.value);ni.value=isNaN(v)?"":(v*rate).toFixed(0);}
+  else{const v=parseFloat(ni.value);ui.value=isNaN(v)?"":(v/rate).toFixed(2);}
+}
+document.getElementById("usd-input").addEventListener("input",()=>{usdMode=true;convert();});
+document.getElementById("nok-input").addEventListener("input",()=>{usdMode=false;convert();});
+document.getElementById("swap-btn").addEventListener("click",()=>{usdMode=!usdMode;convert();});
+document.querySelectorAll(".quick-btn").forEach(b=>b.addEventListener("click",()=>{document.getElementById("usd-input").value=b.dataset.usd;usdMode=true;convert();}));
+fetchRate();
 </script>
 </body>
 </html>
