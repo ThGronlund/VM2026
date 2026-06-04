@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VM 2026 – Kampprogram 20–27 juni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --surface: #111626;
+    --surface2: #181e30;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #f0f2f8;
+    --text2: #8a90a8;
+    --text3: #555d78;
+    --accent: #e8c84a;
+    --accent2: #c8a820;
+    --norway: #ef3340;
+    --norway-bg: rgba(239,51,64,0.12);
+    --norway-border: rgba(239,51,64,0.4);
+    --blue: #378ADD;
+    --blue-bg: rgba(55,138,221,0.12);
+    --green: #1D9E75;
+    --green-bg: rgba(29,158,117,0.1);
+    --radius: 10px;
+    --radius-lg: 14px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(232,200,74,0.12) 0%, transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    line-height: .95;
+    letter-spacing: .02em;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .hero-title span { color: var(--accent); }
+  .hero-sub {
+    font-size: 14px;
+    color: var(--text2);
+    margin-bottom: 1.75rem;
+  }
+
+  /* ── STATS ROW ── */
+  .stats-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .stat-pill {
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    border-radius: 30px;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .stat-pill-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-pill-label {
+    font-size: 12px;
+    color: var(--text2);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── FILTERS ── */
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  .filter-section {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-divider {
+    width: 0.5px;
+    height: 24px;
+    background: var(--border2);
+    margin: 0 4px;
+  }
+  .filter-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-right: 2px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px 13px;
+    border-radius: 20px;
+    border: 0.5px solid var(--border2);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all .18s;
+    white-space: nowrap;
+  }
+  .pill:hover { background: var(--surface); color: var(--text); }
+  .pill.active { background: var(--accent); color: #0a0e1a; border-color: var(--accent); font-weight: 500; }
+  .pill.norge-pill.active { background: var(--norway); color: #fff; border-color: var(--norway); }
+
+  /* ── DAY SECTION ── */
+  .day-section { margin-bottom: 2rem; }
+
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: .75rem;
+    padding-bottom: .6rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .day-weekday {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: var(--accent);
+  }
+  .day-date {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .day-count {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--text3);
+    background: var(--surface2);
+    padding: 2px 9px;
+    border-radius: 20px;
+    border: 0.5px solid var(--border);
+  }
+
+  /* ── MATCH GRID ── */
+  .match-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 8px;
+  }
+
+  .match-card {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 13px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color .18s, background .18s;
+  }
+  .match-card:hover {
+    border-color: var(--border2);
+    background: var(--surface2);
+  }
+  .match-card.norge {
+    background: var(--norway-bg);
+    border-color: var(--norway-border);
+  }
+  .match-card.norge:hover { border-color: var(--norway); }
+
+  .m-time {
+    text-align: center;
+  }
+  .m-time-str {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: .04em;
+    color: var(--text);
+    display: block;
+    line-height: 1;
+  }
+  .m-time-tz {
+    font-size: 9px;
+    color: var(--text3);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .m-body {}
+  .m-teams {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+  .m-vs {
+    color: var(--text3);
+    font-weight: 300;
+    margin: 0 4px;
+  }
+  .m-venue {
+    font-size: 11px;
+    color: var(--text3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .m-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+  .m-group-badge {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    border: 0.5px solid rgba(55,138,221,0.2);
+    white-space: nowrap;
+  }
+  .m-norway-badge {
+    font-size: 9px;
+    font-weight: 500;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: var(--norway-bg);
+    color: var(--norway);
+    border: 0.5px solid var(--norway-border);
+    white-space: nowrap;
+  }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text3);
+    font-size: 14px;
+    border: 0.5px dashed var(--border2);
+    border-radius: var(--radius-lg);
+  }
+
+  /* ── SHOWN COUNTER ── */
+  .shown-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    font-size: 12px;
+    color: var(--text3);
+  }
+  .shown-bar strong { color: var(--text2); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 1.5rem 1rem 2.5rem;
+    font-size: 12px;
+    color: var(--text3);
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .main { padding: 1.5rem 1rem 3rem; }
+    .filter-divider { display: none; }
+    .match-grid { grid-template-columns: 1fr; }
+    .m-venue { max-width: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero-eyebrow">FIFA World Cup 2026 &nbsp;·&nbsp; New York-tid (ET)</p>
+  <h1 class="hero-title">VM <span>2026</span><br>Kampprogram</h1>
+  <p class="hero-sub">Gruppespill &nbsp;·&nbsp; 20–27 juni &nbsp;·&nbsp; Alle tider i Eastern Time (ET)</p>
+  <div class="stats-wrap">
+    <div class="stat-pill"><span class="stat-pill-num">40</span><span class="stat-pill-label">kamper</span></div>
+    <div class="stat-pill"><span class="stat-pill-num">8</span><span class="stat-pill-label">dager</span></div>
+    <div class="stat-pill"><span class="stat-pill-num">12</span><span class="stat-pill-label">grupper</span></div>
+    <div class="stat-pill"><span class="stat-pill-num" style="color:var(--norway)">2</span><span class="stat-pill-label">Norge-kamper</span></div>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="filter-bar">
+    <span class="filter-label">Dag</span>
+    <div class="filter-section" id="day-filters">
+      <button class="pill active" data-type="day" data-val="all">Alle</button>
+      <button class="pill" data-type="day" data-val="20">20/6</button>
+      <button class="pill" data-type="day" data-val="21">21/6</button>
+      <button class="pill" data-type="day" data-val="22">22/6</button>
+      <button class="pill" data-type="day" data-val="23">23/6</button>
+      <button class="pill" data-type="day" data-val="24">24/6</button>
+      <button class="pill" data-type="day" data-val="25">25/6</button>
+      <button class="pill" data-type="day" data-val="26">26/6</button>
+      <button class="pill" data-type="day" data-val="27">27/6</button>
+    </div>
+    <div class="filter-divider"></div>
+    <div class="filter-section">
+      <button class="pill active" data-type="focus" data-val="all">Alle lag</button>
+      <button class="pill norge-pill" data-type="focus" data-val="norge">🇳🇴 Kun Norge</button>
+    </div>
+  </div>
+
+  <div class="shown-bar">
+    <span>Viser <strong id="s-shown">40</strong> av <strong>40</strong> kamper</span>
+  </div>
+
+  <div id="schedule"></div>
+
+</main>
+
+<footer>
+  VM 2026 &nbsp;·&nbsp; Kampprogram 20–27 juni &nbsp;·&nbsp; Alle tider i New York (ET)
+</footer>
+
+<script>
+const MATCHES = [
+  {day:"20",dname:"Lørdag 20. juni",time:"13:00",grp:"F",home:"Nederland",away:"Sverige",venue:"NRG Stadium, Houston",norge:false},
+  {day:"20",dname:"Lørdag 20. juni",time:"16:00",grp:"E",home:"Tyskland",away:"Elfenbenskysten",venue:"BMO Field, Toronto",norge:false},
+  {day:"20",dname:"Lørdag 20. juni",time:"20:00",grp:"E",home:"Ecuador",away:"Curaçao",venue:"Arrowhead Stadium, Kansas City",norge:false},
+  {day:"21",dname:"Søndag 21. juni",time:"00:00",grp:"F",home:"Tunisia",away:"Japan",venue:"Estadio BBVA, Monterrey",norge:false},
+  {day:"21",dname:"Søndag 21. juni",time:"12:00",grp:"H",home:"Spania",away:"Saudi-Arabia",venue:"Mercedes-Benz Stadium, Atlanta",norge:false},
+  {day:"21",dname:"Søndag 21. juni",time:"15:00",grp:"G",home:"Belgia",away:"Iran",venue:"SoFi Stadium, Inglewood",norge:false},
+  {day:"21",dname:"Søndag 21. juni",time:"18:00",grp:"H",home:"Uruguay",away:"Kapp Verde",venue:"Hard Rock Stadium, Miami Gardens",norge:false},
+  {day:"21",dname:"Søndag 21. juni",time:"21:00",grp:"G",home:"New Zealand",away:"Egypt",venue:"BC Place, Vancouver",norge:false},
+  {day:"22",dname:"Mandag 22. juni",time:"13:00",grp:"J",home:"Argentina",away:"Østerrike",venue:"AT&T Stadium, Arlington",norge:false},
+  {day:"22",dname:"Mandag 22. juni",time:"17:00",grp:"I",home:"Frankrike",away:"Irak",venue:"Lincoln Financial Field, Philadelphia",norge:false},
+  {day:"22",dname:"Mandag 22. juni",time:"20:00",grp:"I",home:"Norge",away:"Senegal",venue:"MetLife Stadium, East Rutherford",norge:true},
+  {day:"22",dname:"Mandag 22. juni",time:"23:00",grp:"J",home:"Jordan",away:"Algerie",venue:"Levi's Stadium, Santa Clara",norge:false},
+  {day:"23",dname:"Tirsdag 23. juni",time:"13:00",grp:"K",home:"Portugal",away:"Usbekistan",venue:"NRG Stadium, Houston",norge:false},
+  {day:"23",dname:"Tirsdag 23. juni",time:"16:00",grp:"L",home:"England",away:"Ghana",venue:"AT&T Stadium, Arlington",norge:false},
+  {day:"23",dname:"Tirsdag 23. juni",time:"19:00",grp:"L",home:"Panama",away:"Kroatia",venue:"Lincoln Financial Field, Philadelphia",norge:false},
+  {day:"23",dname:"Tirsdag 23. juni",time:"22:00",grp:"K",home:"Colombia",away:"DR Kongo",venue:"Estadio Akron, Guadalajara",norge:false},
+  {day:"24",dname:"Onsdag 24. juni",time:"15:00",grp:"B",home:"Sveits",away:"Canada",venue:"SoFi Stadium, Inglewood",norge:false},
+  {day:"24",dname:"Onsdag 24. juni",time:"15:00",grp:"B",home:"Bosnia-Herz.",away:"Qatar",venue:"Gillette Stadium, Foxborough",norge:false},
+  {day:"24",dname:"Onsdag 24. juni",time:"18:00",grp:"C",home:"Skottland",away:"Brasil",venue:"Lumen Field, Seattle",norge:false},
+  {day:"24",dname:"Onsdag 24. juni",time:"18:00",grp:"C",home:"Marokko",away:"Haiti",venue:"Mercedes-Benz Stadium, Atlanta",norge:false},
+  {day:"24",dname:"Onsdag 24. juni",time:"21:00",grp:"A",home:"Tsjekkia",away:"Mexico",venue:"Estadio Azteca, Mexico City",norge:false},
+  {day:"24",dname:"Onsdag 24. juni",time:"21:00",grp:"A",home:"Sør-Afrika",away:"Sør-Korea",venue:"Estadio Akron, Zapopan",norge:false},
+  {day:"25",dname:"Torsdag 25. juni",time:"16:00",grp:"E",home:"Ecuador",away:"Tyskland",venue:"MetLife Stadium, East Rutherford",norge:false},
+  {day:"25",dname:"Torsdag 25. juni",time:"16:00",grp:"E",home:"Curaçao",away:"Elfenbenskysten",venue:"Lincoln Financial Field, Philadelphia",norge:false},
+  {day:"25",dname:"Torsdag 25. juni",time:"19:00",grp:"F",home:"Japan",away:"Sverige",venue:"AT&T Stadium, Arlington",norge:false},
+  {day:"25",dname:"Torsdag 25. juni",time:"19:00",grp:"F",home:"Tunisia",away:"Nederland",venue:"Arrowhead Stadium, Kansas City",norge:false},
+  {day:"25",dname:"Torsdag 25. juni",time:"22:00",grp:"D",home:"Tyrkia",away:"USA",venue:"SoFi Stadium, Inglewood",norge:false},
+  {day:"25",dname:"Torsdag 25. juni",time:"22:00",grp:"D",home:"Paraguay",away:"Australia",venue:"Levi's Stadium, Santa Clara",norge:false},
+  {day:"26",dname:"Fredag 26. juni",time:"15:00",grp:"I",home:"Norge",away:"Frankrike",venue:"Gillette Stadium, Foxborough",norge:true},
+  {day:"26",dname:"Fredag 26. juni",time:"15:00",grp:"I",home:"Senegal",away:"Irak",venue:"BMO Field, Toronto",norge:false},
+  {day:"26",dname:"Fredag 26. juni",time:"20:00",grp:"H",home:"Kapp Verde",away:"Saudi-Arabia",venue:"NRG Stadium, Houston",norge:false},
+  {day:"26",dname:"Fredag 26. juni",time:"20:00",grp:"H",home:"Uruguay",away:"Spania",venue:"Estadio Akron, Zapopan",norge:false},
+  {day:"26",dname:"Fredag 26. juni",time:"23:00",grp:"G",home:"Egypt",away:"Iran",venue:"Lumen Field, Seattle",norge:false},
+  {day:"26",dname:"Fredag 26. juni",time:"23:00",grp:"G",home:"New Zealand",away:"Belgia",venue:"BC Place, Vancouver",norge:false},
+  {day:"27",dname:"Lørdag 27. juni",time:"17:00",grp:"L",home:"Panama",away:"England",venue:"MetLife Stadium, East Rutherford",norge:false},
+  {day:"27",dname:"Lørdag 27. juni",time:"17:00",grp:"L",home:"Kroatia",away:"Ghana",venue:"Lincoln Financial Field, Philadelphia",norge:false},
+  {day:"27",dname:"Lørdag 27. juni",time:"19:30",grp:"K",home:"Colombia",away:"Portugal",venue:"Hard Rock Stadium, Miami Gardens",norge:false},
+  {day:"27",dname:"Lørdag 27. juni",time:"19:30",grp:"K",home:"DR Kongo",away:"Usbekistan",venue:"Mercedes-Benz Stadium, Atlanta",norge:false},
+  {day:"27",dname:"Lørdag 27. juni",time:"22:00",grp:"J",home:"Algerie",away:"Østerrike",venue:"Arrowhead Stadium, Kansas City",norge:false},
+  {day:"27",dname:"Lørdag 27. juni",time:"22:00",grp:"J",home:"Jordan",away:"Argentina",venue:"AT&T Stadium, Arlington",norge:false},
+];
+
+let activeDay = "all";
+let activeFocus = "all";
+
+function render() {
+  const container = document.getElementById("schedule");
+  container.innerHTML = "";
+
+  const filtered = MATCHES.filter(m => {
+    if (activeDay !== "all" && m.day !== activeDay) return false;
+    if (activeFocus === "norge" && !m.norge) return false;
+    return true;
+  });
+
+  document.getElementById("s-shown").textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<div class="no-results">Ingen kamper matcher valgt filter</div>';
+    return;
+  }
+
+  const days = [...new Set(filtered.map(m => m.day))];
+  days.forEach(day => {
+    const dayMatches = filtered.filter(m => m.day === day);
+    const dname = dayMatches[0].dname;
+    const parts = dname.split(" ");
+    const weekday = parts[0];
+    const dateStr = parts.slice(1).join(" ");
+
+    const sec = document.createElement("div");
+    sec.className = "day-section";
+
+    const header = document.createElement("div");
+    header.className = "day-header";
+    header.innerHTML = `
+      <span class="day-weekday">${weekday}</span>
+      <span class="day-date">${dateStr}</span>
+      <span class="day-count">${dayMatches.length} kamp${dayMatches.length > 1 ? "er" : ""}</span>
+    `;
+    sec.appendChild(header);
+
+    const grid = document.createElement("div");
+    grid.className = "match-grid";
+
+    dayMatches.forEach(m => {
+      const card = document.createElement("div");
+      card.className = "match-card" + (m.norge ? " norge" : "");
+      card.innerHTML = `
+        <div class="m-time">
+          <span class="m-time-str">${m.time}</span>
+          <span class="m-time-tz">ET</span>
+        </div>
+        <div class="m-body">
+          <div class="m-teams">${m.home} <span class="m-vs">vs</span> ${m.away}</div>
+          <div class="m-venue">${m.venue}</div>
+        </div>
+        <div class="m-right">
+          <span class="m-group-badge">Gr. ${m.grp}</span>
+          ${m.norge ? '<span class="m-norway-badge">Norge</span>' : ''}
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    sec.appendChild(grid);
+    container.appendChild(sec);
+  });
+}
+
+document.querySelectorAll(".pill[data-type='day']").forEach(p => {
+  p.addEventListener("click", () => {
+    document.querySelectorAll(".pill[data-type='day']").forEach(x => x.classList.remove("active"));
+    p.classList.add("active");
+    activeDay = p.dataset.val;
+    render();
+  });
+});
+
+document.querySelectorAll(".pill[data-type='focus']").forEach(p => {
+  p.addEventListener("click", () => {
+    document.querySelectorAll(".pill[data-type='focus']").forEach(x => x.classList.remove("active"));
+    p.classList.add("active");
+    activeFocus = p.dataset.val;
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>
